@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# Barreira contra commit de credencial neste repositório.
+#
+# Instalar (uma vez por clone):
+#     git config core.hooksPath .githooks
+#
+# Por que existe: o .gitignore só protege arquivos que ninguém mandou entrar.
+# Ele não pega uma chave colada dentro do index.html, nem um `git add -f`. Este
+# hook olha o conteúdo que está de fato indo para o commit.
+#
+# LIMITE HONESTO: isto é um quebra-molas, não uma garantia. Pega os formatos
+# comuns de credencial; não pega segredo em formato incomum, senha fraca solta
+# no texto, ou dado pessoal. E `git commit --no-verify` passa por cima de tudo.
+# Segredo que já chegou ao GitHub não se resolve apagando depois: rotacione.
+
+set -u
+
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$staged" ] && exit 0
+
+status=0
+
+# --- 1. Arquivos que nunca devem ser versionados -----------------------------
+# Duplica o .gitignore de propósito: aqui pega também o `git add -f`.
+for f in $staged; do
+    case "$f" in
+        .env|.env.*|*.pem|*.key|*.p12|*.pfx|*.jks|*.keystore|\
+        id_rsa*|id_ed25519*|*.ppk|.netrc|.npmrc|.htpasswd|local.properties)
+            echo "  BLOQUEADO  $f"
+            echo "             arquivo de credencial — não deveria ser versionado"
+            status=1
+            ;;
+    esac
+done
+
+# --- 2. Conteúdo com cara de segredo ----------------------------------------
+PATTERNS='AKIA[0-9A-Z]{16}'
+PATTERNS="$PATTERNS|AIza[0-9A-Za-z_-]{35}"
+PATTERNS="$PATTERNS|gh[pousr]_[0-9A-Za-z]{36}"
+PATTERNS="$PATTERNS|xox[baprs]-[0-9A-Za-z-]{10,}"
+PATTERNS="$PATTERNS|sk-[0-9A-Za-z]{20,}"
+PATTERNS="$PATTERNS|-----BEGIN [A-Z ]*PRIVATE KEY-----"
+PATTERNS="$PATTERNS|(password|passwd|senha|secret|api[_-]?key|apikey|access[_-]?token|auth[_-]?token)[\"' ]*[:=][\"' ]*[^\"' 	]{8,}"
+
+for f in $staged; do
+    # Só arquivos de texto; -I faz o grep pular binário (fontes, imagens).
+    hits=$(git show ":$f" 2>/dev/null | grep -nEI "$PATTERNS" | head -3)
+    if [ -n "$hits" ]; then
+        echo "  SUSPEITO   $f"
+        echo "$hits" | sed 's/^/               /'
+        status=1
+    fi
+done
+
+if [ "$status" -ne 0 ]; then
+    cat <<'AVISO'
+
+  ------------------------------------------------------------------
+  Commit interrompido: há algo com cara de credencial no que ia subir.
+
+  Se for segredo de verdade
+      git restore --staged <arquivo>   e tire o valor do arquivo
+
+  Se for falso positivo (o mais provável neste repo, que é um site
+  estático sem variável de ambiente nenhuma)
+      git commit --no-verify
+
+  Lembre que este repositório é público e servido pelo GitHub Pages:
+  um segredo aqui fica baixável, não só legível no histórico.
+  ------------------------------------------------------------------
+
+AVISO
+fi
+
+exit "$status"

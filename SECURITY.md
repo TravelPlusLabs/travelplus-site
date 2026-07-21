@@ -30,11 +30,10 @@ Please do **not** open a public GitHub issue for a security report.
 
 What to expect:
 
-- We acknowledge reports within **5 business days**.
+- We acknowledge reports within **15 business days**.
 - We follow up with an assessment — accepted, or declined with the reasoning —
-  within **15 business days** of acknowledgement.
-- Accepted issues are fixed and deployed as quickly as the severity warrants;
-  because the site is a single static page, most fixes ship the same day.
+  within **45 business days** of acknowledgement.
+- Accepted issues are fixed and deployed as quickly as the severity warrants.
 - We are happy to credit you in the fix commit if you would like to be named.
 
 We are a small team and do not run a paid bug bounty program, but we appreciate

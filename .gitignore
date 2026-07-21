@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# Segredos e configuração local — nunca versionar.
+#
+# Atenção ao risco específico deste repositório: ele é público E cada arquivo
+# na raiz é servido pelo GitHub Pages. Um segredo commitado aqui não fica só
+# no histórico do git — fica baixável em usetravelplus.com/<arquivo>.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.local
+local.properties
+secrets.*
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*.ppk
+.netrc
+.npmrc
+.htpasswd
+
+# Build do Jekyll — o GitHub Pages gera no servidor; o resultado não sobe.
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Dependências, se o site algum dia ganhar ferramental.
+node_modules/
+vendor/
+.bundle/
+
+# IDEs e editores.
+.idea/
+.vscode/
+*.iml
+*.swp
+*~
+
+# Sistema operacional.
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Temporários, logs e backups.
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej

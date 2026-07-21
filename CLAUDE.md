@@ -19,6 +19,17 @@ Deployed via GitHub Pages from `main` at https://github.com/TravelPlusLabs/trave
 - **Pushing to `main` publishes to the live public site.** There is no staging environment; treat any push as a production deploy.
 - Don't delete or rename `CNAME` — GitHub Pages reads it to keep the custom domain binding.
 - Preview changes by opening `index.html` directly in a browser; no server is needed.
+- [`_config.yml`](_config.yml) exists only to keep internal docs out of the built site. Anything else added at the repo root **is served publicly** at `usetravelplus.com/<file>` — this is a public repo hosting a public site, so a stray file is both readable in git history and downloadable from the domain.
+
+## Secret protection
+
+A [`.githooks/pre-commit`](.githooks/pre-commit) hook blocks commits containing credential-shaped content. **`core.hooksPath` is per-clone local config, so a fresh clone starts unprotected** — enable it once with:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+The hook catches common key formats and credential filenames (including `git add -f`), but it is a speed bump, not a guarantee: unusual formats slip through and `--no-verify` bypasses it. A secret that reaches GitHub is not fixed by a follow-up commit — rotate it.
 
 ## Conventions
 
