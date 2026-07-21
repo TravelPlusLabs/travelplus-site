@@ -1,0 +1,12 @@
+# Configuração do Jekyll no GitHub Pages.
+#
+# Único propósito: manter a documentação interna fora do site publicado. Os
+# arquivos abaixo continuam versionados e visíveis no repositório — só não são
+# copiados para o site, então usetravelplus.com/ROADMAP.md não responde.
+#
+# Não usar .nojekyll no lugar disto: desligar o Jekyll faria o oposto, servindo
+# todo arquivo da raiz, inclusive estes.
+exclude:
+  - CLAUDE.md
+  - ROADMAP.md
+  - SECURITY.md

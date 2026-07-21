@@ -1,0 +1,489 @@
+/*
+ * Travel+ — estilo do site.
+ * Paleta tirada do app: Ocean/Sand do tema Compose (ui/theme/Color.kt) e o
+ * coral do ícone do launcher. Fonte de marca embutida localmente (assets/fonts),
+ * sem CDN ou provedor externo.
+ */
+
+@font-face {
+    font-family: "Caveat Brush";
+    src: url("../fonts/caveat_brush.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --coral: #fd6955;
+    --coral-dark: #e2503c;
+    --ocean: #00677b;
+    --ocean-deep: #00404c;
+    --ocean-night: #04252d;
+    --ocean-light: #7fd4e8;
+    --sand: #dbc6a0;
+    --ink: #16292f;
+    --muted: #5b7079;
+    --paper: #fbf8f3;
+    --line: #e7e0d5;
+
+    --hand: "Caveat Brush", "Segoe Script", cursive;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --wrap: 1080px;
+    --radius: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+}
+
+body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--ocean); }
+a:hover { color: var(--coral-dark); }
+
+:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.wrap {
+    width: 100%;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Tradução secundária sob o texto em português. */
+.en {
+    display: block;
+    font-size: 0.86em;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 0.35em;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--coral);
+    color: #fff;
+    padding: 12px 20px;
+    z-index: 10;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- Cabeçalho ---------- */
+
+.site-header {
+    position: relative;
+    z-index: 2;
+    padding: 22px 0;
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+}
+
+.brand span {
+    font-family: var(--hand);
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}
+
+.site-nav {
+    display: flex;
+    gap: 26px;
+    font-size: 15px;
+}
+
+.site-nav a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.85;
+}
+.site-nav a:hover { opacity: 1; text-decoration: underline; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+    position: relative;
+    color: #fff;
+    background:
+        radial-gradient(1200px 600px at 15% -10%, #0b4757 0%, transparent 60%),
+        linear-gradient(160deg, var(--ocean-deep) 0%, var(--ocean-night) 100%);
+    overflow: hidden;
+}
+
+.hero .site-header { color: #fff; }
+.hero .site-nav a { color: #fff; }
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+    padding: 40px 0 88px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fff;
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+}
+
+.hero h1 {
+    font-size: clamp(2.15rem, 5.2vw, 3.4rem);
+    line-height: 1.1;
+    margin: 22px 0 0;
+    letter-spacing: -0.5px;
+}
+
+.hero h1 .hand {
+    font-family: var(--hand);
+    color: var(--ocean-light);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.hero .lead {
+    font-size: 1.14rem;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 20px 0 0;
+    max-width: 46ch;
+}
+
+.hero .en { color: rgba(255, 255, 255, 0.6); }
+
+.cta-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--coral);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    background: var(--coral-dark);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.cta-note {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.62);
+    max-width: 24ch;
+}
+
+/* Moldura de celular com a arte do app. */
+.phone {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    border-radius: 34px;
+    padding: 9px;
+    background: linear-gradient(150deg, #2c4650, #0d2129);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 26px;
+}
+
+/* ---------- Seções ---------- */
+
+section { padding: 88px 0; }
+
+.section-head { max-width: 60ch; margin-bottom: 44px; }
+
+h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.section-head p {
+    color: var(--muted);
+    font-size: 1.06rem;
+    margin: 14px 0 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+}
+
+.card .num {
+    font-family: var(--hand);
+    font-size: 30px;
+    color: var(--coral);
+    line-height: 1;
+}
+
+.card h3 {
+    font-size: 1.22rem;
+    margin: 12px 0 10px;
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+.card .en { font-size: 0.82em; }
+
+/* Faixa escura: offline e privacidade. */
+.band {
+    background: var(--ocean-deep);
+    color: #fff;
+}
+
+.band .section-head p { color: rgba(255, 255, 255, 0.75); }
+
+.band-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.facts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+}
+
+.facts li {
+    padding-left: 34px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.facts li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 18px;
+    height: 9px;
+    border-left: 2.5px solid var(--ocean-light);
+    border-bottom: 2.5px solid var(--ocean-light);
+    transform: rotate(-45deg);
+}
+
+.facts .en { color: rgba(255, 255, 255, 0.55); }
+
+/* Detalhes menores, em duas colunas. */
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 44px;
+}
+
+.details h3 {
+    font-size: 1.08rem;
+    margin: 0 0 6px;
+}
+
+.details p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.97rem;
+}
+
+.details > div {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+}
+
+/* Galeria das artes do app. */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* ---------- Fecho e rodapé ---------- */
+
+.closing {
+    text-align: center;
+    background: linear-gradient(180deg, var(--paper) 0%, #f3ece1 100%);
+}
+
+.closing .hand-quote {
+    font-family: var(--hand);
+    font-size: clamp(1.9rem, 4.4vw, 2.7rem);
+    color: var(--ocean);
+    margin: 0 0 10px;
+    line-height: 1.25;
+}
+
+.closing p { color: var(--muted); margin: 0 auto; max-width: 48ch; }
+.closing .cta-row { justify-content: center; }
+
+.site-footer {
+    background: var(--ocean-night);
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14.5px;
+    padding: 48px 0;
+}
+
+.site-footer a { color: var(--ocean-light); }
+.site-footer a:hover { color: #fff; }
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.site-footer p { margin: 0 0 6px; }
+.site-footer .legal { color: rgba(255, 255, 255, 0.45); font-size: 13px; }
+
+.footer-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* ---------- Documentos (privacy) ---------- */
+
+.doc {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 88px;
+}
+
+.doc h1 {
+    font-size: clamp(1.9rem, 4.4vw, 2.5rem);
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.doc h2 {
+    font-size: 1.3rem;
+    margin: 40px 0 12px;
+}
+
+.doc .meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.doc .meta p { margin: 2px 0; }
+
+.doc-header {
+    background: var(--ocean-deep);
+    color: #fff;
+}
+.doc-header .site-nav a, .doc-header .brand { color: #fff; }
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 900px) {
+    .hero-grid, .band-grid { grid-template-columns: 1fr; gap: 44px; }
+    .hero-grid { padding-bottom: 64px; }
+    .cards, .details { grid-template-columns: 1fr; }
+    .details > div { padding: 18px 0; }
+    section { padding: 64px 0; }
+    .phone { max-width: 260px; }
+}
+
+@media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery img:nth-child(3) { display: none; }
+    .site-nav { gap: 18px; font-size: 14px; }
+}
