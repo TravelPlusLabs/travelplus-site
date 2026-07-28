@@ -1,0 +1,22 @@
+name: Checks
+
+# main é produção (GitHub Pages publica no merge). Este check roda em todo PR
+# para pegar referência quebrada ou <img> sem alt antes de ir ao ar.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Referências internas e alt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Validar links, assets e alt de imagens
+        run: python3 .github/scripts/check_links.py
