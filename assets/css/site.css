@@ -487,3 +487,439 @@ h2 {
     .gallery img:nth-child(3) { display: none; }
     .site-nav { gap: 18px; font-size: 14px; }
 }
+
+/* ===========================================================================
+ * Arquitetura de conversão (estrutura inspirada em landingpage.com.br):
+ * hero → faixa de valores → intro → blocos alternados → comparativo →
+ * depoimentos → preços → FAQ → CTA final.
+ *
+ * Blocos ainda sem conteúdo real (depoimentos, preços, screenshots) usam a
+ * classe .placeholder — visualmente marcados, para nunca irem ao ar como se
+ * fossem definitivos.
+ * ======================================================================== */
+
+/* CTA secundário, ao lado do botão coral cheio. */
+.btn-ghost {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 13px 26px;
+    border-radius: 999px;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-ghost:hover { color: #fff; border-color: #fff; background: rgba(255, 255, 255, 0.08); }
+
+/* Botão coral em fundo claro (fora do hero). */
+.btn-dark {
+    display: inline-block;
+    background: var(--ocean-deep);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 999px;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-dark:hover { background: var(--ocean-night); color: #fff; transform: translateY(-1px); }
+
+/* Selo de prova social sob o hero. */
+.trust-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+/* Placeholder de conteúdo ainda inexistente. */
+.placeholder {
+    position: relative;
+    border: 2px dashed var(--sand);
+    border-radius: var(--radius);
+    background: repeating-linear-gradient(
+        45deg, transparent, transparent 12px,
+        rgba(219, 198, 160, 0.08) 12px, rgba(219, 198, 160, 0.08) 24px);
+    color: var(--muted);
+    padding: 34px 28px;
+    text-align: center;
+}
+.placeholder::before {
+    content: "A preencher";
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: var(--coral);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+.placeholder h3 { margin: 0 0 6px; color: var(--ink); }
+.placeholder p { margin: 0 auto; max-width: 52ch; font-size: 0.95rem; }
+.placeholder .en { font-size: 0.82em; }
+
+/* Faixa horizontal de valores (no lugar da faixa de integrações do modelo). */
+.value-strip { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.value-strip .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.value-strip .v { text-align: center; }
+.value-strip .v strong { display: block; font-size: 1.02rem; color: var(--ink); }
+.value-strip .v span.lbl { display: block; color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+
+/* Blocos de feature alternados: mídia de um lado, texto do outro. */
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 0;
+}
+.feature-row + .feature-row { border-top: 1px solid var(--line); }
+.feature-row.reverse .feature-media { order: 2; }
+.feature-row .tag {
+    font-family: var(--hand);
+    font-size: 26px;
+    color: var(--coral);
+    line-height: 1;
+}
+.feature-row h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 8px 0 14px; }
+.feature-row p { color: var(--muted); margin: 0; }
+
+/* Moldura de celular reutilizável para as capturas (hoje placeholder). */
+.feature-media {
+    display: flex;
+    justify-content: center;
+}
+.shot {
+    width: 100%;
+    max-width: 288px;
+    aspect-ratio: 1080 / 2340; /* formato real do print, para a tela aparecer inteira */
+    border-radius: 30px;
+    padding: 9px;
+    background: linear-gradient(150deg, #2c4650, #0d2129);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+.shot > * {
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    object-fit: cover;
+}
+.shot .shot-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    background: #0f2830;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    padding: 20px;
+}
+.shot .shot-empty .en { color: rgba(255, 255, 255, 0.45); font-size: 0.82em; }
+
+/* Comparativo Sem / Com. */
+.compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+}
+.compare .col {
+    border-radius: var(--radius);
+    padding: 30px 28px;
+    border: 1px solid var(--line);
+}
+.compare .col.without { background: #fbf3f1; border-color: #f0d9d3; }
+.compare .col.with { background: #eef7f4; border-color: #cfe7de; }
+.compare .col h3 { margin: 0 0 14px; font-size: 1.2rem; display: flex; align-items: center; gap: 9px; }
+.compare .col h3::before { font-size: 1.1em; }
+.compare .without h3::before { content: "✕"; color: var(--coral-dark); }
+.compare .with h3::before { content: "✓"; color: var(--ocean); }
+.compare .col p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+/* Preços. */
+.plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+.plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    background: #fff;
+}
+.plan h3 { font-size: 1.3rem; margin: 0; }
+.plan .tagline { color: var(--muted); font-size: 0.92rem; margin: 6px 0 0; min-height: 2.7em; }
+.plan .price { font-size: 2.1rem; font-weight: 700; margin: 18px 0 2px; line-height: 1; }
+.plan .price small { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+.plan ul {
+    list-style: none;
+    margin: 22px 0 26px;
+    padding: 0;
+    display: grid;
+    gap: 11px;
+}
+.plan li {
+    padding-left: 26px;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+.plan li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.4em;
+    width: 13px;
+    height: 7px;
+    border-left: 2px solid var(--ocean);
+    border-bottom: 2px solid var(--ocean);
+    transform: rotate(-45deg);
+}
+.plan .btn, .plan .btn-dark, .plan .btn-outline {
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+}
+
+/* Plano em destaque (o do meio). */
+.plan.featured {
+    border: 2px solid var(--coral);
+    box-shadow: 0 20px 44px rgba(253, 105, 85, 0.16);
+}
+.plan .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--coral);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* Botão de contorno para fundo claro (plano grátis). */
+.btn-outline {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+.btn-outline:hover { border-color: var(--ocean); color: var(--ocean); }
+
+/* FAQ com <details> nativo. */
+.faq { max-width: 780px; margin: 0 auto; }
+.faq details {
+    border-bottom: 1px solid var(--line);
+    padding: 4px 0;
+}
+.faq summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 40px 18px 0;
+    position: relative;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--coral);
+    line-height: 1;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details > p { margin: 0 0 18px; color: var(--muted); }
+
+/* Galeria de destinos — carrossel de capas ilustradas.
+   Trilha com scroll-snap (arrasta no touch/trackpad sem JS); as setas e a
+   passagem automática vêm de um script inline, com degradação graciosa. */
+.carousel { position: relative; }
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;              /* Firefox */
+    -ms-overflow-style: none;           /* Edge antigo */
+    padding: 4px;                       /* respiro para a sombra dos cards */
+    margin: -4px;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track > .dest {
+    flex: 0 0 calc((100% - 40px) / 3);  /* 3 cards visíveis no desktop */
+    scroll-snap-align: start;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: var(--ocean-deep);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    z-index: 3;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+.carousel-btn:hover { background: var(--coral); }
+.carousel-btn:active { transform: translateY(-50%) scale(0.94); }
+.carousel-btn.prev { left: -18px; }
+.carousel-btn.next { right: -18px; }
+
+.dest {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+.dest img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.dest:hover img { transform: scale(1.05); }
+.dest .label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 46px 18px 16px;
+    color: #fff;
+    font-family: var(--hand);
+    font-size: 1.75rem;
+    line-height: 1;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+}
+
+/* Fundo de doodles (o mesmo traço das capas do app) para trechos escuros.
+   O PNG é traço branco em transparência, então rende sobre o azul-oceano. */
+.doodle-dark {
+    position: relative;
+    background: linear-gradient(160deg, var(--ocean-deep) 0%, var(--ocean-night) 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.doodle-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../img/doodles.png") center / cover no-repeat;
+    opacity: 0.42;
+    pointer-events: none;
+}
+.doodle-dark > * { position: relative; z-index: 1; }
+.doodle-dark .hand-quote { color: var(--ocean-light); }
+.doodle-dark p { color: rgba(255, 255, 255, 0.82); }
+
+/* Doodles bem sutis atrás do hero. */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../img/doodles.png") center / cover no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+.hero .wrap { position: relative; z-index: 1; }
+
+/* Landmarks grandes e tortos como enfeite de fundo. O PNG é usado como
+   máscara, então a cor (tom oceano nos trechos claros) vem do CSS e o fundo
+   cinza do arquivo nunca aparece. Ficam bem fracos, atrás do conteúdo. */
+.has-accent { position: relative; overflow: hidden; }
+.has-accent > .wrap { position: relative; z-index: 1; }
+.landmark {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.lm-eiffel { background-image: url("../img/doodle-eiffel.png"); }
+.lm-taj    { background-image: url("../img/doodle-taj.png"); }
+.lm-bigben { background-image: url("../img/doodle-bigben.png"); }
+
+.acc-eiffel {
+    width: 460px; height: 560px;
+    right: -60px; top: 20px;
+    transform: rotate(-9deg);
+    opacity: 0.26;
+}
+.acc-taj {
+    width: 640px; height: 429px;
+    left: -80px; bottom: -30px;
+    transform: rotate(6deg);
+    opacity: 0.20;
+}
+.acc-bigben {
+    width: 200px; height: 642px;
+    right: 4%; top: 16px;
+    transform: rotate(11deg);
+    opacity: 0.26;
+}
+
+@media (max-width: 760px) {
+    .landmark { display: none; } /* limpa a leitura no celular */
+}
+
+/* Alternância de fundo entre seções claras. */
+.tint { background: #f6f1e8; }
+
+@media (max-width: 900px) {
+    .value-strip .wrap { grid-template-columns: 1fr 1fr; gap: 26px; }
+    .feature-row { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
+    .feature-row.reverse .feature-media { order: 0; }
+    .compare, .plans { grid-template-columns: 1fr; }
+    .carousel-track > .dest { flex-basis: calc((100% - 20px) / 2); } /* 2 no tablet */
+}
+
+@media (max-width: 560px) {
+    .value-strip .wrap { grid-template-columns: 1fr; }
+    .cta-row .btn, .cta-row .btn-ghost { width: 100%; text-align: center; }
+    .carousel-track > .dest { flex-basis: 82%; }  /* 1 card + espiada no celular */
+    .carousel-btn { display: none; }              /* no touch, arrasta */
+}
