@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="assets/img/icon-192.png">
     <link rel="canonical" href="https://usetravelplus.com/">
     <meta name="theme-color" content="#00404c">
-    <link rel="stylesheet" href="assets/css/site.css?v=20260729">
+    <link rel="stylesheet" href="assets/css/site.css?v=20260730">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Travel+">
@@ -22,9 +22,8 @@
     <meta property="og:locale" content="pt_BR">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Dados estruturados (SEO / rich results). TODO(popular): preencher
-         aggregateRating e downloadUrl quando o app estiver publicado na Play
-         Store; hoje omitidos de propósito para não declarar métrica falsa. -->
+    <!-- Dados estruturados (SEO). TODO(popular): preencher aggregateRating e
+         downloadUrl quando o app estiver na Play Store. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,7 +45,7 @@
     </script>
 </head>
 <body>
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<a class="skip-link" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
 
 <!-- 1. HERO ---------------------------------------------------------------- -->
 <div class="hero">
@@ -57,70 +56,76 @@
                 <span>Travel+</span>
             </a>
             <nav class="site-nav" aria-label="Navegação principal">
-                <a href="#recursos">Recursos</a>
-                <a href="#planos">Planos</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#duvidas">Dúvidas</a>
-                <a href="#contato">Contato</a>
+                <a href="#recursos" data-i18n="nav.features">Recursos</a>
+                <a href="#planos" data-i18n="nav.plans">Planos</a>
+                <a href="#sobre" data-i18n="nav.about">Sobre</a>
+                <a href="#duvidas" data-i18n="nav.faq">Dúvidas</a>
+                <a href="#contato" data-i18n="nav.contact">Contato</a>
             </nav>
+            <!-- Seletor de idioma. As traduções EN/ES foram escritas pela IA e
+                 precisam de revisão de tom pelo dono (sobretudo o espanhol). -->
+            <div class="lang-switch" role="group" aria-label="Idioma / Language / Idioma">
+                <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+                <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                <button type="button" data-lang="es" aria-pressed="false">ES</button>
+            </div>
         </div>
     </header>
 
     <div class="wrap">
         <div class="hero-grid">
             <div>
-                <p class="eyebrow">Em breve na Google Play <span lang="en">· Coming soon</span></p>
+                <p class="eyebrow" data-i18n="hero.eyebrow">Em breve na Google Play</p>
 
-                <h1>Sua viagem inteira<br>em um lugar só. <span class="hand">Sem internet.</span></h1>
+                <h1 data-i18n="hero.title">Sua viagem inteira<br>em um lugar só. <span class="hand">Sem internet.</span></h1>
 
-                <p class="lead">
+                <p class="lead" data-i18n="hero.lead">
                     Tudo que você pesquisa e decide sobre uma viagem — onde ir, onde comer,
                     onde dormir, passagens, carro e quanto vai custar — reunido no seu bolso
                     e funcionando mesmo sem sinal.
-                    <span class="en" lang="en">Everything you research and decide about a trip — where to go, where to
-                    eat, where to sleep, tickets, car rental and what it costs — in your
-                    pocket, working with no signal at all.</span>
                 </p>
 
                 <div class="cta-row">
-                    <a class="btn" href="#contato">Quero saber do lançamento</a>
-                    <a class="btn-ghost" href="#recursos">Ver os recursos</a>
+                    <a class="btn" href="#contato" data-i18n="hero.cta1">Quero saber do lançamento</a>
+                    <a class="btn-ghost" href="#recursos" data-i18n="hero.cta2">Ver os recursos</a>
                 </div>
 
-                <!-- PLACEHOLDER: prova social. Preencher quando houver número real
-                     de instalações, nota na Play Store ou depoimento verificável.
-                     Não inventar métrica. -->
+                <!-- PLACEHOLDER: prova social. TODO(popular): trocar por nota/instalações reais. -->
                 <p class="trust-line">
                     <span aria-hidden="true">★★★★★</span>
-                    <span>Espaço para prova social — nº de instalações ou nota na Play, quando existir</span>
+                    <span data-i18n="hero.trust">Avaliações e número de instalações chegam com o lançamento.</span>
                 </p>
             </div>
 
             <div class="phone">
-                <img src="assets/img/app-cover.jpg" alt="Tela do Travel+: a capa da viagem “Cairo”, com as pirâmides ao pôr do sol em tela cheia, o nome em letra manuscrita e o período 10–16/09/2026." width="640" height="1387" fetchpriority="high">
+                <img src="assets/img/app-cover.jpg" alt="Tela do Travel+: a capa da viagem “Cairo”, com as pirâmides ao pôr do sol, o nome em letra manuscrita e o período da viagem." width="640" height="1387" fetchpriority="high">
             </div>
         </div>
     </div>
 </div>
 
-<!-- 2. FAIXA DE VALORES (no lugar da faixa de integrações do modelo) ------- -->
+<!-- 2. FAIXA DE VALORES --------------------------------------------------- -->
 <div class="value-strip">
     <div class="wrap">
         <div class="v">
-            <strong>100% offline</strong>
-            <span class="lbl">Funciona no modo avião</span><span class="en" lang="en">Works offline</span>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 8.5C7 4 17 4 22 8.5"/><path d="M5 12c4-3 10-3 14 0"/><path d="M8.5 15.5c2-1.5 5-1.5 7 0"/><line x1="3" y1="3" x2="21" y2="21"/></svg></span>
+            <strong data-i18n="val.1t">100% offline</strong>
+            <span class="lbl" data-i18n="val.1d">Planeje e consulte tudo no modo avião.</span>
         </div>
         <div class="v">
-            <strong>Sem cadastro</strong>
-            <span class="lbl">Nada de login ou senha</span><span class="en" lang="en">No account</span>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 10V8a6 6 0 0 1 12 0v2"/><rect x="4" y="10" width="16" height="10" rx="2"/></svg></span>
+            <strong data-i18n="val.2t">Sem cadastro</strong>
+            <span class="lbl" data-i18n="val.2d">Nada de login, senha ou e-mail para começar.</span>
         </div>
         <div class="v">
-            <strong>Dados no aparelho</strong>
-            <span class="lbl">Não sobem para servidor</span><span class="en" lang="en">On-device</span>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="9" y1="18" x2="15" y2="18"/></svg></span>
+            <strong data-i18n="val.3t">Dados no aparelho</strong>
+            <span class="lbl" data-i18n="val.3d">Suas viagens não sobem para servidor nenhum.</span>
         </div>
         <div class="v">
-            <strong>Feito no Brasil</strong>
-            <span class="lbl">Valores em real, em pt-BR</span>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+            <strong data-i18n="val.4t">Feito no Brasil</strong>
+            <span class="lbl" data-i18n="val.4d">Valores em real e textos em português.</span>
         </div>
     </div>
 </div>
@@ -128,92 +133,78 @@
 <main id="conteudo">
 
     <!-- 2b. NÚMEROS — PLACEHOLDER ----------------------------------------- -->
-    <!-- TODO(popular): trocar os "—" por números reais (instalações, nota na
-         Play, viagens criadas) quando existirem. Não inventar métrica. -->
+    <!-- TODO(popular): trocar os "—" por números reais quando existirem. -->
     <section class="stats" aria-label="Números do Travel+">
         <div class="wrap">
-            <div class="stat"><span class="n">—</span><span class="l">Instalações <span class="en" lang="en">Installs</span></span></div>
-            <div class="stat"><span class="n">—</span><span class="l">Nota na Play <span class="en" lang="en">Play rating</span></span></div>
-            <div class="stat"><span class="n">—</span><span class="l">Viagens criadas <span class="en" lang="en">Trips created</span></span></div>
-            <div class="stat"><span class="n">100%</span><span class="l">Offline, de verdade <span class="en" lang="en">Truly offline</span></span></div>
+            <div class="stat"><span class="n">—</span><span class="l" data-i18n="stat.installs">Instalações</span></div>
+            <div class="stat"><span class="n">—</span><span class="l" data-i18n="stat.rating">Nota na Play</span></div>
+            <div class="stat"><span class="n">—</span><span class="l" data-i18n="stat.trips">Viagens criadas</span></div>
+            <div class="stat"><span class="n">100%</span><span class="l" data-i18n="stat.offline">Offline, de verdade</span></div>
         </div>
     </section>
 
-    <!-- 3. INTRO DE RECURSOS (3 pilares) ---------------------------------- -->
+    <!-- 3. FLUXO (3 pilares) — com efeito de passo a passo ---------------- -->
     <section id="recursos" class="has-accent">
         <span class="landmark lm-eiffel acc-eiffel" aria-hidden="true"></span>
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Do sonho ao dia a dia da viagem</h2>
-                <p>
+                <h2 data-i18n="flow.title">Do sonho ao dia a dia da viagem</h2>
+                <p data-i18n="flow.sub">
                     O app segue o fluxo real de quem planeja: primeiro você junta as
                     possibilidades, depois distribui no tempo — e o custo se fecha sozinho.
-                    <span class="en" lang="en">The app follows how planning actually works: collect possibilities,
-                    spread them over the days, and the cost adds itself up.</span>
                 </p>
             </div>
 
-            <div class="cards">
-                <article class="card">
+            <div class="cards flow" data-flow>
+                <article class="card step">
                     <p class="num">1</p>
-                    <h3>Roteiro</h3>
-                    <p>
-                        Locais, gastronomia, hospedagem, passagens e aluguel de carro. Cada
-                        item com foto, valor, endereço e prioridade.
-                        <span class="en" lang="en">Places, food, lodging, tickets and car rental — each with photo,
-                        cost, address and priority.</span>
+                    <h3 data-i18n="flow.1t">Roteiro</h3>
+                    <p data-i18n="flow.1d">
+                        Junte locais, gastronomia, hospedagem, passagens e aluguel de carro —
+                        cada item com foto, valor, endereço e prioridade.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card step">
                     <p class="num">2</p>
-                    <h3>Cronograma</h3>
-                    <p>
-                        Um quadro com uma coluna por dia. Arraste os cards entre os dias;
-                        mudar as datas da viagem mantém tudo no lugar.
-                        <span class="en" lang="en">A board with one column per day. Changing the trip dates keeps your
-                        plan intact.</span>
+                    <h3 data-i18n="flow.2t">Cronograma</h3>
+                    <p data-i18n="flow.2d">
+                        Distribua tudo num quadro com uma coluna por dia. Arraste os cards
+                        entre os dias; mudar as datas da viagem mantém tudo no lugar.
                     </p>
                 </article>
-                <article class="card">
+                <article class="card step">
                     <p class="num">3</p>
-                    <h3>Orçamento</h3>
-                    <p>
-                        Nada de planilha: os valores lançados nos itens se somam sozinhos,
-                        agrupados por categoria, com o total sempre à vista.
-                        <span class="en" lang="en">No spreadsheet: amounts add up on their own, grouped by category.</span>
+                    <h3 data-i18n="flow.3t">Orçamento</h3>
+                    <p data-i18n="flow.3d">
+                        E o custo se fecha sozinho: os valores lançados nos itens somam
+                        automaticamente, por categoria, com o total sempre à vista.
                     </p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- 4. BLOCOS DE FEATURE ALTERNADOS ----------------------------------- -->
-    <!-- Estrutura pronta para as capturas do app. Enquanto elas não existem,
-         a moldura mostra um placeholder. Substituir o .shot-empty por
-         <img src="assets/img/screenshot-*.jpg" alt="..."> quando houver. -->
+    <!-- 4. BLOCOS DE FEATURE ALTERNADOS (telas reais) --------------------- -->
     <section class="tint">
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Como funciona, por dentro</h2>
-                <p>Cada tela pensada para planejar dar tão gosto quanto viajar.
-                   <span class="en" lang="en">Each screen made so planning feels as good as the trip.</span></p>
+                <h2 data-i18n="how.title">Como funciona, por dentro</h2>
+                <p data-i18n="how.sub">Cada tela foi pensada para planejar dar tão gosto quanto viajar.</p>
             </div>
 
             <div class="feature-row">
                 <div class="feature-media">
                     <div class="shot">
-                        <img src="assets/img/app-roteiro.jpg" alt="Tela Roteiro do Travel+ para a viagem a Cairo: seções Locais (Pirâmides de Gizé, Grande Esfinge) e Gastronomia, cada item com foto e prioridade em corações." width="640" height="1387" loading="lazy">
+                        <img src="assets/img/app-roteiro.jpg" alt="Tela Roteiro do Travel+ para a viagem a Cairo: seções Locais e Gastronomia, cada item com foto e prioridade em corações." width="640" height="1387" loading="lazy">
                     </div>
                 </div>
                 <div>
-                    <p class="tag">Roteiro</p>
-                    <h3>Colecione tudo antes de partir</h3>
-                    <p>
+                    <p class="tag" data-i18n="how.1tag">Roteiro</p>
+                    <h3 data-i18n="how.1t">Colecione tudo antes de partir</h3>
+                    <p data-i18n="how.1d">
                         Locais para conhecer, restaurantes com seus pratos e bebidas,
                         hospedagem, passagens de ida e volta e aluguel de carro. Todo item
                         com endereço abre o mapa do aparelho com a rota pronta.
-                        <span class="en" lang="en">Places, restaurants with their dishes, lodging, round-trip tickets
-                        and car rental — every address opens the device's maps app.</span>
                     </p>
                 </div>
             </div>
@@ -221,18 +212,16 @@
             <div class="feature-row reverse">
                 <div class="feature-media">
                     <div class="shot">
-                        <img src="assets/img/app-cronograma.jpg" alt="Tela Cronograma do Travel+: o board do Dia 2 da viagem a Cairo, com os cards “Pirâmides de Gizé” às 09:00 e “Grande Esfinge de Gizé” às 12:00." width="640" height="1387" loading="lazy">
+                        <img src="assets/img/app-cronograma.jpg" alt="Tela Cronograma do Travel+: o board do Dia 2 da viagem a Cairo, com cards de passeios e seus horários." width="640" height="1387" loading="lazy">
                     </div>
                 </div>
                 <div>
-                    <p class="tag">Cronograma</p>
-                    <h3>Distribua no tempo, arrastando</h3>
-                    <p>
+                    <p class="tag" data-i18n="how.2tag">Cronograma</p>
+                    <h3 data-i18n="how.2t">Distribua no tempo, arrastando</h3>
+                    <p data-i18n="how.2d">
                         Um quadro com uma coluna por dia. Puxe um item do roteiro ou crie um
                         card livre, arraste entre os dias, defina horários. Os cards ancoram
                         na posição — mudou a data da viagem, o plano não embaralha.
-                        <span class="en" lang="en">One column per day. Drag cards between days; they anchor by position,
-                        so changing dates never scrambles the plan.</span>
                     </p>
                 </div>
             </div>
@@ -240,109 +229,127 @@
             <div class="feature-row">
                 <div class="feature-media">
                     <div class="shot">
-                        <img src="assets/img/app-orcamento.jpg" alt="Tela Orçamento do Travel+: os custos da viagem a Cairo somados por categoria (Locais, Gastronomia, Hospedagem, Passagens, Aluguel) e o total de R$ 19.138,00 fixo no rodapé." width="640" height="1387" loading="lazy">
+                        <img src="assets/img/app-orcamento.jpg" alt="Tela Orçamento do Travel+: custos da viagem a Cairo somados por categoria e o total fixo no rodapé." width="640" height="1387" loading="lazy">
                     </div>
                 </div>
                 <div>
-                    <p class="tag">Orçamento</p>
-                    <h3>O custo se fecha sozinho</h3>
-                    <p>
+                    <p class="tag" data-i18n="how.3tag">Orçamento</p>
+                    <h3 data-i18n="how.3t">O custo se fecha sozinho</h3>
+                    <p data-i18n="how.3d">
                         Nada é digitado aqui: os valores lançados em cada item do roteiro se
                         somam automaticamente, agrupados por categoria, com o total fixo no
                         rodapé enquanto você navega.
-                        <span class="en" lang="en">Nothing is typed here — the amounts from each item add up on their
-                        own, grouped by category, total pinned at the bottom.</span>
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4a. GRADE DE RECURSOS (ícones) ------------------------------------ -->
+    <!-- 4a. MARQUEE DE PRINTS (efeito de galeria contínua) ---------------- -->
     <section>
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Tudo que cabe na mochila</h2>
-                <p>Os detalhes que fazem falta numa planilha.
-                   <span class="en" lang="en">The details a spreadsheet misses.</span></p>
+                <h2 data-i18n="wall.title">Um tour pelas telas</h2>
+                <p data-i18n="wall.sub">Capturas reais do app — capas de destino, listas e planejamento.</p>
+            </div>
+        </div>
+        <!-- Marquee: rola sozinho, pausa no hover; sem movimento se o usuário pediu. -->
+        <div class="marquee" aria-label="Galeria de telas do app">
+            <div class="marquee-track">
+                <div class="mshot"><img src="assets/img/app-cover.jpg" alt="Capa da viagem a Cairo no Travel+." width="480" height="1040" loading="lazy"></div>
+                <div class="mshot"><img src="assets/img/app-viagens.jpg" alt="Tela “Suas viagens” do Travel+, com vários destinos em cards." width="480" height="1040" loading="lazy"></div>
+                <div class="mshot"><img src="assets/img/app-paris.jpg" alt="Capa da viagem a Paris no Travel+." width="480" height="1040" loading="lazy"></div>
+                <div class="mshot"><img src="assets/img/app-gramado.jpg" alt="Capa da viagem a Gramado no Travel+." width="480" height="1040" loading="lazy"></div>
+                <div class="mshot"><img src="assets/img/app-barcelona.jpg" alt="Capa da viagem a Barcelona no Travel+." width="480" height="1040" loading="lazy"></div>
+                <div class="mshot"><img src="assets/img/app-paris-cron.jpg" alt="Cronograma da viagem a Paris no Travel+." width="480" height="1040" loading="lazy"></div>
+                <!-- cópia para loop contínuo (aria-hidden) -->
+                <div class="mshot" aria-hidden="true"><img src="assets/img/app-cover.jpg" alt="" width="480" height="1040" loading="lazy"></div>
+                <div class="mshot" aria-hidden="true"><img src="assets/img/app-viagens.jpg" alt="" width="480" height="1040" loading="lazy"></div>
+                <div class="mshot" aria-hidden="true"><img src="assets/img/app-paris.jpg" alt="" width="480" height="1040" loading="lazy"></div>
+                <div class="mshot" aria-hidden="true"><img src="assets/img/app-gramado.jpg" alt="" width="480" height="1040" loading="lazy"></div>
+                <div class="mshot" aria-hidden="true"><img src="assets/img/app-barcelona.jpg" alt="" width="480" height="1040" loading="lazy"></div>
+                <div class="mshot" aria-hidden="true"><img src="assets/img/app-paris-cron.jpg" alt="" width="480" height="1040" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4b. GRADE DE RECURSOS (ícones) ------------------------------------ -->
+    <section>
+        <div class="wrap">
+            <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
+                <h2 data-i18n="grid.title">Tudo que cabe na mochila</h2>
+                <p data-i18n="grid.sub">Os detalhes que fazem falta numa planilha.</p>
             </div>
             <div class="featgrid">
                 <article class="feat">
                     <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 8.5C7 4 17 4 22 8.5"/><path d="M5 12c4-3 10-3 14 0"/><path d="M8.5 15.5c2-1.5 5-1.5 7 0"/><line x1="3" y1="3" x2="21" y2="21"/><circle cx="12" cy="19" r=".6"/></svg></div>
-                    <h3>Funciona offline</h3>
-                    <p>Tudo no aparelho, sem depender de rede — feito para o modo avião.
-                       <span class="en" lang="en">Everything on-device.</span></p>
+                    <h3 data-i18n="grid.1t">Funciona offline</h3>
+                    <p data-i18n="grid.1d">Tudo no aparelho, sem depender de rede — feito para o modo avião.</p>
                 </article>
                 <article class="feat">
                     <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-                    <h3>Como chegar</h3>
-                    <p>Todo item com endereço abre o app de mapas com a rota pronta.
-                       <span class="en" lang="en">Opens the device's maps app.</span></p>
+                    <h3 data-i18n="grid.2t">Como chegar</h3>
+                    <p data-i18n="grid.2d">Todo item com endereço abre o app de mapas com a rota pronta.</p>
                 </article>
                 <article class="feat">
                     <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10.5 3.5a1.6 1.6 0 0 1 3 0V9l7 4v2l-7-2v4l2 1.5V21l-3.5-1L9 21v-1.5L11 18v-4l-7 2v-2l7-4Z"/></svg></div>
-                    <h3>Passagens de todo tipo</h3>
-                    <p>Ida e volta num card só — avião, trem, navio ou ônibus.
-                       <span class="en" lang="en">Flights, trains, ships or buses.</span></p>
+                    <h3 data-i18n="grid.3t">Passagens de todo tipo</h3>
+                    <p data-i18n="grid.3d">Ida e volta num card só — avião, trem, navio ou ônibus.</p>
                 </article>
                 <article class="feat">
                     <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/><line x1="4.5" y1="4.5" x2="9.6" y2="9.6"/><line x1="19.5" y1="4.5" x2="14.4" y2="9.6"/><line x1="4.5" y1="19.5" x2="9.6" y2="14.4"/><line x1="19.5" y1="19.5" x2="14.4" y2="14.4"/></svg></div>
-                    <h3>Contatos de urgência</h3>
-                    <p>Hospitais e veterinários — para quem viaja com pet — com o telefone à mão.
-                       <span class="en" lang="en">Hospitals and vets, one tap away.</span></p>
+                    <h3 data-i18n="grid.4t">Contatos de urgência</h3>
+                    <p data-i18n="grid.4d">Hospitais e veterinários — para quem viaja com pet — com o telefone à mão.</p>
                 </article>
                 <article class="feat">
                     <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m4 17 5-5 4 4 3-2.5 4 3.5"/></svg></div>
-                    <h3>Fotos que ficam</h3>
-                    <p>A imagem escolhida é copiada para dentro do app — a viagem não quebra.
-                       <span class="en" lang="en">Photos are copied in, so trips never break.</span></p>
+                    <h3 data-i18n="grid.5t">Fotos que ficam</h3>
+                    <p data-i18n="grid.5d">A imagem escolhida é copiada para dentro do app — a viagem não quebra.</p>
                 </article>
                 <article class="feat">
                     <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.6"/><rect x="14" y="4" width="7" height="10" rx="1.6"/><path d="M6.5 8h0M17.5 8h0"/></svg></div>
-                    <h3>Arrastar e soltar</h3>
-                    <p>Monte o cronograma movendo os cards entre os dias, com a ordem que quiser.
-                       <span class="en" lang="en">Drag cards between days to plan.</span></p>
+                    <h3 data-i18n="grid.6t">Arrastar e soltar</h3>
+                    <p data-i18n="grid.6d">Monte o cronograma movendo os cards entre os dias, na ordem que quiser.</p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- 4b. DESTINOS (capas ilustradas do app) ---------------------------- -->
+    <!-- 4c. DESTINOS (carrossel) ------------------------------------------ -->
     <section>
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Toda viagem já nasce bonita</h2>
-                <p>
+                <h2 data-i18n="dest.title">Toda viagem já nasce bonita</h2>
+                <p data-i18n="dest.sub">
                     Cada viagem ganha uma capa ilustrada no app — do litoral brasileiro às
                     ruas do outro lado do mundo. Uma amostra da arte do Travel+.
-                    <span class="en" lang="en">Every trip gets an illustrated cover — a taste of Travel+'s artwork.</span>
                 </p>
             </div>
             <div class="carousel" data-carousel>
                 <button class="carousel-btn prev" type="button" aria-label="Destino anterior">&lsaquo;</button>
                 <div class="carousel-track" tabindex="0" aria-label="Carrossel de destinos">
                     <figure class="dest">
-                        <img src="assets/img/dest-rio.jpg" alt="Capa ilustrada do Rio de Janeiro no Travel+: o Cristo Redentor no alto do Corcovado ao pôr do sol, com o Pão de Açúcar e a baía ao fundo." width="480" height="853" loading="lazy">
+                        <img src="assets/img/dest-rio.jpg" alt="Capa ilustrada do Rio de Janeiro: o Cristo Redentor no Corcovado ao pôr do sol, com o Pão de Açúcar ao fundo." width="480" height="853" loading="lazy">
                         <figcaption class="label">Rio de Janeiro</figcaption>
                     </figure>
                     <figure class="dest">
-                        <img src="assets/img/dest-gramado.jpg" alt="Capa ilustrada de Gramado no Travel+: uma igreja de pedra iluminada ao entardecer, ladeada por hortênsias e araucárias." width="480" height="853" loading="lazy">
+                        <img src="assets/img/dest-gramado.jpg" alt="Capa ilustrada de Gramado: uma igreja de pedra iluminada ao entardecer, entre hortênsias e araucárias." width="480" height="853" loading="lazy">
                         <figcaption class="label">Gramado</figcaption>
                     </figure>
                     <figure class="dest">
-                        <img src="assets/img/dest-maragogi.jpg" alt="Capa ilustrada de Maragogi no Travel+: piscinas naturais de águas turquesa com jangadas, coqueiros e um pôr do sol alaranjado." width="480" height="853" loading="lazy">
+                        <img src="assets/img/dest-maragogi.jpg" alt="Capa ilustrada de Maragogi: piscinas naturais turquesa com jangadas e um pôr do sol alaranjado." width="480" height="853" loading="lazy">
                         <figcaption class="label">Maragogi</figcaption>
                     </figure>
                     <figure class="dest">
-                        <img src="assets/img/dest-paris.jpg" alt="Capa ilustrada de Paris no Travel+: a Torre Eiffel ao pôr do sol vista do rio Sena, com um banco de ferro e cerejeiras em flor." width="480" height="853" loading="lazy">
+                        <img src="assets/img/dest-paris.jpg" alt="Capa ilustrada de Paris: a Torre Eiffel ao pôr do sol vista do Sena, com um banco de ferro e cerejeiras." width="480" height="853" loading="lazy">
                         <figcaption class="label">Paris</figcaption>
                     </figure>
                     <figure class="dest">
-                        <img src="assets/img/dest-roma.jpg" alt="Capa ilustrada de Roma no Travel+: o Coliseu ao entardecer visto de uma rua de paralelepípedos, com uma lambreta clara estacionada." width="480" height="853" loading="lazy">
+                        <img src="assets/img/dest-roma.jpg" alt="Capa ilustrada de Roma: o Coliseu ao entardecer visto de uma rua de paralelepípedos, com uma lambreta." width="480" height="853" loading="lazy">
                         <figcaption class="label">Roma</figcaption>
                     </figure>
                     <figure class="dest">
-                        <img src="assets/img/dest-kyoto.jpg" alt="Capa ilustrada de Kyoto no Travel+: um pagode de cinco andares ao fim da tarde, no alto de uma ladeira de casas tradicionais com cerejeiras." width="480" height="720" loading="lazy">
+                        <img src="assets/img/dest-kyoto.jpg" alt="Capa ilustrada de Kyoto: um pagode ao fim da tarde no alto de uma ladeira de casas tradicionais com cerejeiras." width="480" height="720" loading="lazy">
                         <figcaption class="label">Kyoto</figcaption>
                     </figure>
                 </div>
@@ -355,27 +362,23 @@
     <section>
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>A viagem sem e com o Travel+</h2>
+                <h2 data-i18n="cmp.title">A viagem sem e com o Travel+</h2>
             </div>
             <div class="compare">
                 <div class="col without">
-                    <h3>Sem o Travel+</h3>
-                    <p>
+                    <h3 data-i18n="cmp.wo.t">Sem o Travel+</h3>
+                    <p data-i18n="cmp.wo.d">
                         Reserva no e-mail, endereços num bloco de notas, gastos numa planilha,
-                        fotos espalhadas na galeria. Na hora que falta sinal — estrada, avião,
-                        roaming — é onde nada está à mão.
-                        <span class="en" lang="en">Bookings in your e-mail, addresses in notes, costs in a spreadsheet,
-                        photos scattered — and none of it reachable when the signal drops.</span>
+                        fotos espalhadas na galeria. E, quando falta sinal — estrada, avião,
+                        roaming — nada está à mão.
                     </p>
                 </div>
                 <div class="col with">
-                    <h3>Com o Travel+</h3>
-                    <p>
+                    <h3 data-i18n="cmp.w.t">Com o Travel+</h3>
+                    <p data-i18n="cmp.w.d">
                         Roteiro, dias, custos e contatos de urgência num app só, no bolso,
                         funcionando sem internet. O que você planejou continua lá, mesmo no
                         modo avião.
-                        <span class="en" lang="en">Itinerary, days, costs and emergency contacts in one app, in your
-                        pocket, working with no connection at all.</span>
                     </p>
                 </div>
             </div>
@@ -383,108 +386,86 @@
     </section>
 
     <!-- 6. DEPOIMENTOS — PLACEHOLDER -------------------------------------- -->
-    <!-- Sem usuários ainda. Não preencher com depoimento fictício: seria
-         fabricar avaliação. Substituir por depoimentos reais e verificáveis
-         quando o app estiver em uso. -->
+    <!-- Sem usuários ainda; não preencher com depoimento fictício. -->
     <section class="tint" id="depoimentos">
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Quem usa, recomenda</h2>
+                <h2 data-i18n="test.title">Quem usa, recomenda</h2>
             </div>
             <div class="placeholder">
-                <h3>Depoimentos entram aqui</h3>
-                <p>
+                <h3 data-i18n="test.ph.t">Depoimentos entram aqui</h3>
+                <p data-i18n="test.ph.d">
                     O app ainda não foi lançado, então não há usuários para citar. Este bloco
-                    fica reservado para depoimentos reais depois do lançamento — não
-                    preencher com texto inventado.
-                    <span class="en" lang="en">Reserved for real testimonials after launch — do not fill with
-                    invented quotes.</span>
+                    fica reservado para depoimentos reais depois do lançamento.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- 7. PLANOS --------------------------------------------------------- -->
-    <!-- DADOS DE EXEMPLO. Títulos, valores e recursos são fictícios, só para
-         validar o layout. Monetização real ainda é indefinida no ROADMAP do
-         app — trocar tudo antes de qualquer publicação. -->
+    <!-- 7. PLANOS — DADOS DE EXEMPLO -------------------------------------- -->
+    <!-- Títulos, valores e recursos são fictícios (só p/ layout). Monetização
+         indefinida no ROADMAP. Trocar tudo antes de publicar de verdade. -->
     <section id="planos" class="has-accent">
         <span class="landmark lm-taj acc-taj" aria-hidden="true"></span>
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Escolha o seu tipo de viagem</h2>
-                <p>
-                    <em>Valores e recursos abaixo são de exemplo, apenas para visualizar o
-                    layout — nada aqui é definitivo.</em>
-                    <span class="en" lang="en">Sample pricing, for layout only.</span>
-                </p>
+                <h2 data-i18n="plan.title">Escolha o seu tipo de viagem</h2>
+                <p data-i18n="plan.sub"><em>Valores e recursos abaixo são de exemplo, apenas para visualizar o layout — nada aqui é definitivo.</em></p>
             </div>
             <div class="plans">
-
                 <div class="plan">
-                    <h3>Explorador</h3>
-                    <p class="tagline">Para tirar a primeira viagem do papel.</p>
-                    <p class="price">R$ 0<small> /para sempre</small></p>
+                    <h3 data-i18n="plan.1.name">Explorador</h3>
+                    <p class="tagline" data-i18n="plan.1.tag">Para tirar a primeira viagem do papel.</p>
+                    <p class="price">R$ 0<small data-i18n="plan.1.per"> /para sempre</small></p>
                     <ul>
-                        <li>Até 2 viagens</li>
-                        <li>Roteiro, cronograma e orçamento</li>
-                        <li>100% offline, sem cadastro</li>
+                        <li data-i18n="plan.1.f1">Até 2 viagens</li>
+                        <li data-i18n="plan.1.f2">Roteiro, cronograma e orçamento</li>
+                        <li data-i18n="plan.1.f3">100% offline, sem cadastro</li>
                     </ul>
-                    <a class="btn-outline" href="#contato">Começar grátis</a>
+                    <a class="btn-outline" href="#contato" data-i18n="plan.1.cta">Começar grátis</a>
                 </div>
-
                 <div class="plan featured">
-                    <span class="badge">Mais popular</span>
-                    <h3>Aventureiro</h3>
-                    <p class="tagline">Para quem já está planejando a próxima.</p>
-                    <p class="price">R$ 9,90<small> /mês</small></p>
+                    <span class="badge" data-i18n="plan.badge">Mais popular</span>
+                    <h3 data-i18n="plan.2.name">Aventureiro</h3>
+                    <p class="tagline" data-i18n="plan.2.tag">Para quem já está planejando a próxima.</p>
+                    <p class="price">R$ 9,90<small data-i18n="plan.per"> /mês</small></p>
                     <ul>
-                        <li>Viagens ilimitadas</li>
-                        <li>Exportar roteiro em PDF</li>
-                        <li>Sem anúncios</li>
-                        <li>Capas e ilustrações extras</li>
+                        <li data-i18n="plan.2.f1">Viagens ilimitadas</li>
+                        <li data-i18n="plan.2.f2">Exportar roteiro em PDF</li>
+                        <li data-i18n="plan.2.f3">Sem anúncios</li>
+                        <li data-i18n="plan.2.f4">Capas e ilustrações extras</li>
                     </ul>
-                    <a class="btn" href="#contato">Assinar</a>
+                    <a class="btn" href="#contato" data-i18n="plan.2.cta">Assinar</a>
                 </div>
-
                 <div class="plan">
-                    <h3>Desbravador</h3>
-                    <p class="tagline">A viagem com tudo ligado.</p>
-                    <p class="price">R$ 16,90<small> /mês</small></p>
+                    <h3 data-i18n="plan.3.name">Desbravador</h3>
+                    <p class="tagline" data-i18n="plan.3.tag">A viagem com tudo ligado.</p>
+                    <p class="price">R$ 16,90<small data-i18n="plan.per2"> /mês</small></p>
                     <ul>
-                        <li>Tudo do Aventureiro</li>
-                        <li>Previsão do tempo no cronograma</li>
-                        <li>Alarmes dos horários</li>
-                        <li>Boas-vindas por destino</li>
+                        <li data-i18n="plan.3.f1">Tudo do Aventureiro</li>
+                        <li data-i18n="plan.3.f2">Previsão do tempo no cronograma</li>
+                        <li data-i18n="plan.3.f3">Alarmes dos horários</li>
+                        <li data-i18n="plan.3.f4">Boas-vindas por destino</li>
                     </ul>
-                    <a class="btn-dark" href="#contato">Assinar</a>
+                    <a class="btn-dark" href="#contato" data-i18n="plan.3.cta">Assinar</a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- 8. FAQ ------------------------------------------------------------ -->
-    <!-- 8. LISTA DE ESPERA — PLACEHOLDER ---------------------------------- -->
-    <!-- TODO(popular): este formulário NÃO ENVIA para lugar nenhum ainda.
-         Captar e-mail exige serviço externo (Buttondown, Formspree…) ou
-         backend próprio — o que traz um terceiro recebendo dados e entra na
-         política de privacidade. Decisão pendente. Enquanto isso os campos
-         ficam desabilitados e o convite aponta para o e-mail de contato. -->
+    <!-- 8. LISTA DE ESPERA — PLACEHOLDER (form desabilitado) -------------- -->
     <section class="newsletter">
         <div class="wrap">
             <div class="box">
                 <div class="section-head" style="text-align:center; margin:0 auto;">
-                    <h2>Avise-me no lançamento</h2>
-                    <p>Deixe seu e-mail e a gente chama quando o Travel+ entrar na Play Store.
-                       <span class="en" lang="en">Leave your e-mail and we'll ping you at launch.</span></p>
+                    <h2 data-i18n="news.title">Avise-me no lançamento</h2>
+                    <p data-i18n="news.sub">Deixe seu e-mail e a gente chama quando o Travel+ entrar na Play Store.</p>
                 </div>
                 <form onsubmit="return false;" aria-label="Lista de espera (em breve)">
-                    <input type="email" placeholder="seu@email.com" aria-label="Seu e-mail" disabled>
-                    <button class="btn" type="submit" disabled>Quero ser avisado</button>
+                    <input type="email" placeholder="seu@email.com" data-i18n-ph="news.ph" aria-label="Seu e-mail" disabled>
+                    <button class="btn" type="submit" disabled data-i18n="news.btn">Quero ser avisado</button>
                 </form>
-                <p class="note">Captação de e-mail ainda não está ativa. Por ora, escreva para
-                   <a href="mailto:contact@usetravelplus.com">contact@usetravelplus.com</a>.</p>
+                <p class="note" data-i18n="news.note">Captação de e-mail ainda não está ativa. Por ora, escreva para <a href="mailto:contact@usetravelplus.com">contact@usetravelplus.com</a>.</p>
             </div>
         </div>
     </section>
@@ -494,45 +475,27 @@
         <span class="landmark lm-bigben acc-bigben" aria-hidden="true"></span>
         <div class="wrap">
             <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
-                <h2>Dúvidas frequentes</h2>
+                <h2 data-i18n="faq.title">Dúvidas frequentes</h2>
             </div>
             <div class="faq">
                 <details open>
-                    <summary>O app funciona sem internet?</summary>
-                    <p>
-                        Sim. Todos os dados ficam num banco local no aparelho e nenhuma
-                        funcionalidade essencial depende de rede — foi feito para o modo avião.
-                        <span class="en" lang="en">Yes — all data lives in a local database and nothing essential needs
-                        a network.</span>
-                    </p>
+                    <summary data-i18n="faq.1q">O app funciona sem internet?</summary>
+                    <p data-i18n="faq.1a">Sim. Todos os dados ficam num banco local no aparelho e nenhuma funcionalidade essencial depende de rede — foi feito para o modo avião.</p>
                 </details>
                 <details>
-                    <summary>Meus dados vão para algum servidor?</summary>
-                    <p>
-                        Não. Não há cadastro, login nem servidor nosso; nada é enviado para
-                        fora do aparelho. Detalhes na
-                        <a href="privacy.html">política de privacidade</a>.
-                        <span class="en" lang="en">No — no account, no server, nothing leaves your device.</span>
-                    </p>
+                    <summary data-i18n="faq.2q">Meus dados vão para algum servidor?</summary>
+                    <p data-i18n="faq.2a">Não. Não há cadastro, login nem servidor nosso; nada é enviado para fora do aparelho. Detalhes na <a href="privacy.html">política de privacidade</a>.</p>
                 </details>
                 <details>
-                    <summary>Quanto vai custar?</summary>
-                    <!-- PLACEHOLDER: alinhar com a decisão de monetização. -->
-                    <p>
-                        O modelo de preços ainda está sendo definido. <em>(Resposta a
-                        completar quando os planos forem fechados.)</em>
-                        <span class="en" lang="en">Pricing is still being decided.</span>
-                    </p>
+                    <summary data-i18n="faq.3q">Quanto vai custar?</summary>
+                    <!-- TODO(popular): alinhar com a decisão de monetização. -->
+                    <p data-i18n="faq.3a">O modelo de preços ainda está sendo definido — assim que fecharmos, contamos por aqui.</p>
                 </details>
                 <details>
-                    <summary>Está disponível para iPhone?</summary>
-                    <p>
-                        Por ora o Travel+ é um app Android. <em>(Ajustar esta resposta
-                        conforme o plano de plataformas.)</em>
-                        <span class="en" lang="en">For now, Travel+ is an Android app.</span>
-                    </p>
+                    <summary data-i18n="faq.4q">Está disponível para iPhone?</summary>
+                    <!-- TODO(popular): ajustar conforme o plano de plataformas. -->
+                    <p data-i18n="faq.4a">Por ora, o Travel+ é um app Android.</p>
                 </details>
-                <!-- Adicionar novas perguntas repetindo um bloco <details>. -->
             </div>
         </div>
     </section>
@@ -541,13 +504,9 @@
     <section class="tint" id="sobre">
         <div class="wrap">
             <div class="about">
-                <p class="lead-q">Por que fizemos o Travel+</p>
+                <p class="lead-q" data-i18n="about.q">Por que fizemos o Travel+</p>
                 <!-- TODO(popular): reescrever com a história real da marca. -->
-                <p>Viajar é planejar — e planejar devia dar tão gosto quanto a viagem. O Travel+
-                   nasceu para reunir tudo (roteiro, dias e custos) num lugar só, bonito, no
-                   bolso, funcionando mesmo sem sinal. <em>(Texto de exemplo — ajustar com a
-                   história real.)</em>
-                   <span class="en" lang="en">Placeholder — replace with the real brand story.</span></p>
+                <p data-i18n="about.d">Viajar é planejar — e planejar devia dar tão gosto quanto a viagem. O Travel+ nasceu para reunir tudo (roteiro, dias e custos) num lugar só, bonito, no bolso, funcionando mesmo sem sinal.</p>
             </div>
         </div>
     </section>
@@ -555,13 +514,8 @@
     <!-- 11. CTA FINAL (faixa escura com doodles) -------------------------- -->
     <section class="closing doodle-dark" id="contato">
         <div class="wrap">
-            <p class="hand-quote">Para onde vamos agora?</p>
-            <p>
-                O Travel+ ainda não está na loja. Se quiser ser avisado do lançamento ou
-                mandar uma ideia, é só escrever — a gente lê tudo.
-                <span class="en" lang="en">Travel+ isn't on the store yet. Write to us to hear about the launch or
-                to send an idea.</span>
-            </p>
+            <p class="hand-quote" data-i18n="cta.q">Para onde vamos agora?</p>
+            <p data-i18n="cta.d">O Travel+ ainda não está na loja. Se quiser ser avisado do lançamento ou mandar uma ideia, é só escrever — a gente lê tudo.</p>
             <div class="cta-row">
                 <a class="btn" href="mailto:contact@usetravelplus.com?subject=Travel%2B">contact@usetravelplus.com</a>
             </div>
@@ -579,100 +533,274 @@
                     <img src="assets/img/icon-192.png" alt="" width="40" height="40">
                     <span>Travel+</span>
                 </a>
-                <p class="legal" style="margin-top:14px; max-width:34ch;">Seu planejador de viagens offline, no bolso.</p>
-                <!-- TODO(popular): trocar o '#' pelos perfis reais de redes sociais quando existirem. -->
+                <p class="legal" style="margin-top:14px; max-width:34ch;" data-i18n="foot.tagline">Seu planejador de viagens offline, no bolso.</p>
+                <!-- TODO(popular): trocar o '#' pelos perfis reais quando existirem. -->
                 <div class="footer-social">
                     <a href="#" aria-label="Instagram (em breve)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.7 0 3 0 4.1.1 1 .1 1.7.2 2.3.5.6.2 1.1.5 1.6 1 .5.5.8 1 1 1.6.3.6.4 1.3.5 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 1-.2 1.7-.5 2.3-.2.6-.5 1.1-1 1.6-.5.5-1 .8-1.6 1-.6.3-1.3.4-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1-.1-1.7-.2-2.3-.5-.6-.2-1.1-.5-1.6-1-.5-.5-.8-1-1-1.6-.3-.6-.4-1.3-.5-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c.1-1 .2-1.7.5-2.3.2-.6.5-1.1 1-1.6.5-.5 1-.8 1.6-1 .6-.3 1.3-.4 2.3-.5C9 2 9.3 2 12 2Z"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.1"/></svg></a>
                     <a href="mailto:contact@usetravelplus.com" aria-label="E-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
                 </div>
             </div>
             <div>
-                <h4>Produto</h4>
+                <h4 data-i18n="foot.product">Produto</h4>
                 <ul>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#planos">Planos</a></li>
-                    <li><a href="#duvidas">Dúvidas</a></li>
+                    <li><a href="#recursos" data-i18n="nav.features">Recursos</a></li>
+                    <li><a href="#planos" data-i18n="nav.plans">Planos</a></li>
+                    <li><a href="#duvidas" data-i18n="nav.faq">Dúvidas</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Empresa</h4>
+                <h4 data-i18n="foot.company">Empresa</h4>
                 <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="mailto:contact@usetravelplus.com">Contato</a></li>
-                    <!-- TODO(popular): link do Blog quando existir. -->
+                    <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+                    <li><a href="mailto:contact@usetravelplus.com" data-i18n="nav.contact">Contato</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Legal</h4>
+                <h4 data-i18n="foot.legal">Legal</h4>
                 <ul>
-                    <li><a href="privacy.html">Privacidade</a></li>
-                    <li><a href="https://github.com/TravelPlusLabs/travelplus-site/security/policy">Segurança</a></li>
+                    <li><a href="privacy.html" data-i18n="foot.privacy">Privacidade</a></li>
+                    <li><a href="https://github.com/TravelPlusLabs/travelplus-site/security/policy" data-i18n="foot.security">Segurança</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="legal">&copy; 2026 TravelPlus Labs — Mauricio Aparecido de Carvalho Desenvolvimento de Software LTDA · CNPJ 62.171.100/0001-38</p>
-            <p class="legal">Android é uma marca da Google LLC.</p>
+            <p class="legal" data-i18n="foot.trademark">Android é uma marca da Google LLC.</p>
         </div>
     </div>
 </footer>
 
 <script>
-// Carrossel de destinos: setas + passagem automática. Sem dependências.
-// A trilha já rola/arrasta sozinha via CSS scroll-snap; isto é o realce.
+/* =========================================================================
+ * i18n — PT é o padrão do HTML; EN/ES vêm deste dicionário.
+ * ⚠️ REVISAR: as traduções EN e, sobretudo, ES foram redigidas pela IA e
+ * precisam da revisão de tom/marca do dono antes de publicar.
+ * Chave ausente → cai no PT (nunca fica em branco).
+ * ======================================================================= */
+var I18N = {
+  en: {
+    'skip':'Skip to content',
+    'nav.features':'Features','nav.plans':'Plans','nav.about':'About','nav.faq':'FAQ','nav.contact':'Contact',
+    'hero.eyebrow':'Coming soon on Google Play',
+    'hero.title':'Your whole trip<br>in one place. <span class="hand">No internet.</span>',
+    'hero.lead':'Everything you research and decide about a trip — where to go, where to eat, where to sleep, tickets, car rental and what it costs — in your pocket, working even with no signal.',
+    'hero.cta1':'Tell me at launch','hero.cta2':'See the features',
+    'hero.trust':'Ratings and install numbers will land at launch.',
+    'val.1t':'100% offline','val.1d':'Plan and check everything in airplane mode.',
+    'val.2t':'No sign-up','val.2d':'No login, password or e-mail to get started.',
+    'val.3t':'On your device','val.3d':'Your trips never go up to any server.',
+    'val.4t':'Made in Brazil','val.4d':'Amounts in BRL, texts in Portuguese.',
+    'stat.installs':'Installs','stat.rating':'Play rating','stat.trips':'Trips created','stat.offline':'Truly offline',
+    'flow.title':'From the dream to the day-to-day of the trip',
+    'flow.sub':'The app follows how planning really works: first you gather the possibilities, then you spread them over time — and the cost adds itself up.',
+    'flow.1t':'Itinerary','flow.1d':'Gather places, food, lodging, tickets and car rental — each with photo, cost, address and priority.',
+    'flow.2t':'Schedule','flow.2d':'Spread it all on a board with one column per day. Drag cards between days; changing the trip dates keeps everything in place.',
+    'flow.3t':'Budget','flow.3d':'And the cost closes itself: the amounts on each item add up automatically, by category, with the total always in view.',
+    'how.title':'How it works, inside',
+    'how.sub':'Every screen made so planning feels as good as the trip.',
+    'how.1tag':'Itinerary','how.1t':'Collect it all before you go',
+    'how.1d':'Places to see, restaurants with their dishes and drinks, lodging, round-trip tickets and car rental. Every item with an address opens the device’s maps with the route ready.',
+    'how.2tag':'Schedule','how.2t':'Spread it over time by dragging',
+    'how.2d':'A board with one column per day. Pull an item from the itinerary or add a free card, drag between days, set times. Cards anchor by position — change the dates and the plan doesn’t scramble.',
+    'how.3tag':'Budget','how.3t':'The cost closes itself',
+    'how.3d':'Nothing is typed here: the amounts on each itinerary item add up automatically, grouped by category, with the total pinned at the bottom as you browse.',
+    'wall.title':'A tour of the screens','wall.sub':'Real screenshots — destination covers, lists and planning.',
+    'grid.title':'Everything that fits in your backpack','grid.sub':'The details a spreadsheet misses.',
+    'grid.1t':'Works offline','grid.1d':'All on the device, no network needed — made for airplane mode.',
+    'grid.2t':'Get directions','grid.2d':'Every item with an address opens the maps app with the route ready.',
+    'grid.3t':'Any kind of ticket','grid.3d':'Round trip in a single card — plane, train, ship or bus.',
+    'grid.4t':'Emergency contacts','grid.4d':'Hospitals and vets — for those travelling with a pet — one tap away.',
+    'grid.5t':'Photos that stay','grid.5d':'The chosen image is copied into the app — the trip never breaks.',
+    'grid.6t':'Drag and drop','grid.6d':'Build the schedule by moving cards between days, in any order you like.',
+    'dest.title':'Every trip is born beautiful',
+    'dest.sub':'Each trip gets an illustrated cover in the app — from the Brazilian coast to streets on the other side of the world. A taste of Travel+’s artwork.',
+    'cmp.title':'Travelling without and with Travel+',
+    'cmp.wo.t':'Without Travel+','cmp.wo.d':'Booking in your e-mail, addresses in a notes app, spending in a spreadsheet, photos scattered in the gallery. And when the signal drops — road, plane, roaming — nothing is at hand.',
+    'cmp.w.t':'With Travel+','cmp.w.d':'Itinerary, days, costs and emergency contacts in one app, in your pocket, working with no internet. What you planned stays there, even in airplane mode.',
+    'test.title':'People who use it, recommend it',
+    'test.ph.t':'Testimonials go here','test.ph.d':'The app hasn’t launched yet, so there are no users to quote. This block is reserved for real testimonials after launch.',
+    'plan.title':'Choose your kind of trip',
+    'plan.sub':'<em>The amounts and features below are examples, just to preview the layout — nothing here is final.</em>',
+    'plan.badge':'Most popular',
+    'plan.1.name':'Explorer','plan.1.tag':'To get your first trip off the ground.','plan.1.per':' /forever',
+    'plan.1.f1':'Up to 2 trips','plan.1.f2':'Itinerary, schedule and budget','plan.1.f3':'100% offline, no sign-up','plan.1.cta':'Start free',
+    'plan.2.name':'Adventurer','plan.2.tag':'For those already planning the next one.','plan.per':' /month',
+    'plan.2.f1':'Unlimited trips','plan.2.f2':'Export itinerary to PDF','plan.2.f3':'No ads','plan.2.f4':'Extra covers and artwork','plan.2.cta':'Subscribe',
+    'plan.3.name':'Trailblazer','plan.3.tag':'The trip with everything switched on.','plan.per2':' /month',
+    'plan.3.f1':'Everything in Adventurer','plan.3.f2':'Weather in the schedule','plan.3.f3':'Time alarms','plan.3.f4':'Per-destination welcome','plan.3.cta':'Subscribe',
+    'news.title':'Tell me at launch','news.sub':'Leave your e-mail and we’ll ping you when Travel+ hits the Play Store.',
+    'news.ph':'you@email.com','news.btn':'Notify me',
+    'news.note':'E-mail capture isn’t active yet. For now, write to <a href="mailto:contact@usetravelplus.com">contact@usetravelplus.com</a>.',
+    'faq.title':'Frequently asked questions',
+    'faq.1q':'Does the app work without internet?','faq.1a':'Yes. All data lives in a local database on the device and nothing essential depends on a network — it was made for airplane mode.',
+    'faq.2q':'Does my data go to a server?','faq.2a':'No. There’s no sign-up, no login and no server of ours; nothing leaves your device. Details in the <a href="privacy.html">privacy policy</a>.',
+    'faq.3q':'How much will it cost?','faq.3a':'Pricing is still being decided — as soon as we settle it, we’ll say so here.',
+    'faq.4q':'Is it available for iPhone?','faq.4a':'For now, Travel+ is an Android app.',
+    'about.q':'Why we made Travel+','about.d':'Travelling is planning — and planning should feel as good as the trip itself. Travel+ was born to bring it all together (itinerary, days and costs) in one place: beautiful, in your pocket, working even with no signal.',
+    'cta.q':'Where to next?','cta.d':'Travel+ isn’t on the store yet. To hear about the launch or send an idea, just write — we read everything.',
+    'foot.tagline':'Your offline trip planner, in your pocket.',
+    'foot.product':'Product','foot.company':'Company','foot.legal':'Legal','foot.privacy':'Privacy','foot.security':'Security',
+    'foot.trademark':'Android is a trademark of Google LLC.',
+    '_title':'Travel+ — Your whole trip in one place, offline',
+    '_desc':'Travel+ is a trip organizer for Android: itinerary, day-by-day schedule and consolidated budget. Works offline and your data stays on your device.'
+  },
+  es: {
+    'skip':'Saltar al contenido',
+    'nav.features':'Recursos','nav.plans':'Planes','nav.about':'Acerca','nav.faq':'Dudas','nav.contact':'Contacto',
+    'hero.eyebrow':'Pronto en Google Play',
+    'hero.title':'Todo tu viaje<br>en un solo lugar. <span class="hand">Sin internet.</span>',
+    'hero.lead':'Todo lo que investigas y decides sobre un viaje — a dónde ir, dónde comer, dónde dormir, pasajes, coche y cuánto costará — reunido en tu bolsillo y funcionando incluso sin señal.',
+    'hero.cta1':'Avísame en el lanzamiento','hero.cta2':'Ver los recursos',
+    'hero.trust':'Las valoraciones y el número de instalaciones llegarán con el lanzamiento.',
+    'val.1t':'100% sin conexión','val.1d':'Planifica y consulta todo en modo avión.',
+    'val.2t':'Sin registro','val.2d':'Sin usuario, contraseña ni correo para empezar.',
+    'val.3t':'En tu dispositivo','val.3d':'Tus viajes no suben a ningún servidor.',
+    'val.4t':'Hecho en Brasil','val.4d':'Importes en reales y textos en portugués.',
+    'stat.installs':'Instalaciones','stat.rating':'Nota en Play','stat.trips':'Viajes creados','stat.offline':'Sin conexión, de verdad',
+    'flow.title':'Del sueño al día a día del viaje',
+    'flow.sub':'La app sigue el flujo real de quien planifica: primero reúnes las posibilidades, luego las distribuyes en el tiempo — y el costo se calcula solo.',
+    'flow.1t':'Itinerario','flow.1d':'Reúne lugares, gastronomía, alojamiento, pasajes y alquiler de coche — cada ítem con foto, valor, dirección y prioridad.',
+    'flow.2t':'Cronograma','flow.2d':'Distribúyelo todo en un tablero con una columna por día. Arrastra las tarjetas entre los días; cambiar las fechas mantiene todo en su lugar.',
+    'flow.3t':'Presupuesto','flow.3d':'Y el costo se cierra solo: los valores de cada ítem se suman automáticamente, por categoría, con el total siempre a la vista.',
+    'how.title':'Cómo funciona, por dentro',
+    'how.sub':'Cada pantalla pensada para que planificar guste tanto como viajar.',
+    'how.1tag':'Itinerario','how.1t':'Reúne todo antes de partir',
+    'how.1d':'Lugares para conocer, restaurantes con sus platos y bebidas, alojamiento, pasajes de ida y vuelta y alquiler de coche. Todo ítem con dirección abre el mapa del dispositivo con la ruta lista.',
+    'how.2tag':'Cronograma','how.2t':'Distribuye en el tiempo, arrastrando',
+    'how.2d':'Un tablero con una columna por día. Trae un ítem del itinerario o crea una tarjeta libre, arrastra entre los días, define horarios. Las tarjetas se anclan por posición — cambias las fechas y el plan no se desordena.',
+    'how.3tag':'Presupuesto','how.3t':'El costo se cierra solo',
+    'how.3d':'Aquí no se escribe nada: los valores de cada ítem del itinerario se suman automáticamente, agrupados por categoría, con el total fijo abajo mientras navegas.',
+    'wall.title':'Un recorrido por las pantallas','wall.sub':'Capturas reales de la app — portadas de destino, listas y planificación.',
+    'grid.title':'Todo lo que cabe en la mochila','grid.sub':'Los detalles que una planilla no tiene.',
+    'grid.1t':'Funciona sin conexión','grid.1d':'Todo en el dispositivo, sin depender de la red — hecho para el modo avión.',
+    'grid.2t':'Cómo llegar','grid.2d':'Todo ítem con dirección abre la app de mapas con la ruta lista.',
+    'grid.3t':'Pasajes de todo tipo','grid.3d':'Ida y vuelta en una sola tarjeta — avión, tren, barco o autobús.',
+    'grid.4t':'Contactos de urgencia','grid.4d':'Hospitales y veterinarios — para quien viaja con mascota — con el teléfono a mano.',
+    'grid.5t':'Fotos que se quedan','grid.5d':'La imagen elegida se copia dentro de la app — el viaje no se rompe.',
+    'grid.6t':'Arrastrar y soltar','grid.6d':'Arma el cronograma moviendo las tarjetas entre los días, en el orden que quieras.',
+    'dest.title':'Todo viaje ya nace bonito',
+    'dest.sub':'Cada viaje recibe una portada ilustrada en la app — desde el litoral brasileño hasta calles del otro lado del mundo. Una muestra del arte de Travel+.',
+    'cmp.title':'El viaje sin y con Travel+',
+    'cmp.wo.t':'Sin Travel+','cmp.wo.d':'Reservas en el correo, direcciones en notas, gastos en una planilla, fotos dispersas en la galería. Y cuando falta señal — carretera, avión, roaming — nada está a mano.',
+    'cmp.w.t':'Con Travel+','cmp.w.d':'Itinerario, días, costos y contactos de urgencia en una sola app, en el bolsillo, funcionando sin internet. Lo que planificaste sigue ahí, incluso en modo avión.',
+    'test.title':'Quien la usa, la recomienda',
+    'test.ph.t':'Los testimonios van aquí','test.ph.d':'La app aún no se ha lanzado, así que no hay usuarios para citar. Este bloque queda reservado para testimonios reales tras el lanzamiento.',
+    'plan.title':'Elige tu tipo de viaje',
+    'plan.sub':'<em>Los importes y recursos de abajo son de ejemplo, solo para ver el diseño — nada aquí es definitivo.</em>',
+    'plan.badge':'Más popular',
+    'plan.1.name':'Explorador','plan.1.tag':'Para sacar el primer viaje del papel.','plan.1.per':' /para siempre',
+    'plan.1.f1':'Hasta 2 viajes','plan.1.f2':'Itinerario, cronograma y presupuesto','plan.1.f3':'100% sin conexión, sin registro','plan.1.cta':'Empezar gratis',
+    'plan.2.name':'Aventurero','plan.2.tag':'Para quien ya está planeando el próximo.','plan.per':' /mes',
+    'plan.2.f1':'Viajes ilimitados','plan.2.f2':'Exportar itinerario en PDF','plan.2.f3':'Sin anuncios','plan.2.f4':'Portadas e ilustraciones extra','plan.2.cta':'Suscribirse',
+    'plan.3.name':'Descubridor','plan.3.tag':'El viaje con todo activado.','plan.per2':' /mes',
+    'plan.3.f1':'Todo lo de Aventurero','plan.3.f2':'Clima en el cronograma','plan.3.f3':'Alarmas de horarios','plan.3.f4':'Bienvenida por destino','plan.3.cta':'Suscribirse',
+    'news.title':'Avísame en el lanzamiento','news.sub':'Deja tu correo y te avisamos cuando Travel+ llegue a la Play Store.',
+    'news.ph':'tu@correo.com','news.btn':'Quiero que me avisen',
+    'news.note':'La captación de correo aún no está activa. Por ahora, escribe a <a href="mailto:contact@usetravelplus.com">contact@usetravelplus.com</a>.',
+    'faq.title':'Preguntas frecuentes',
+    'faq.1q':'¿La app funciona sin internet?','faq.1a':'Sí. Todos los datos están en una base local en el dispositivo y ninguna función esencial depende de la red — se hizo para el modo avión.',
+    'faq.2q':'¿Mis datos van a algún servidor?','faq.2a':'No. No hay registro, ni inicio de sesión, ni servidor nuestro; nada sale de tu dispositivo. Detalles en la <a href="privacy.html">política de privacidad</a>.',
+    'faq.3q':'¿Cuánto costará?','faq.3a':'El modelo de precios aún se está definiendo — en cuanto lo cerremos, lo contamos aquí.',
+    'faq.4q':'¿Está disponible para iPhone?','faq.4a':'Por ahora, Travel+ es una app Android.',
+    'about.q':'Por qué hicimos Travel+','about.d':'Viajar es planificar — y planificar debería gustar tanto como el viaje. Travel+ nació para reunirlo todo (itinerario, días y costos) en un solo lugar: bonito, en el bolsillo, funcionando incluso sin señal.',
+    'cta.q':'¿A dónde vamos ahora?','cta.d':'Travel+ todavía no está en la tienda. Si quieres que te avisemos del lanzamiento o mandar una idea, solo escribe — lo leemos todo.',
+    'foot.tagline':'Tu planificador de viajes sin conexión, en el bolsillo.',
+    'foot.product':'Producto','foot.company':'Empresa','foot.legal':'Legal','foot.privacy':'Privacidad','foot.security':'Seguridad',
+    'foot.trademark':'Android es una marca de Google LLC.',
+    '_title':'Travel+ — Todo tu viaje en un solo lugar, sin conexión',
+    '_desc':'Travel+ es un organizador de viajes para Android: itinerario, cronograma diario y presupuesto consolidado. Funciona sin conexión y tus datos quedan en tu dispositivo.'
+  }
+};
+
+(function () {
+    var PT_TITLE = document.title;
+    var descEl = document.querySelector('meta[name="description"]');
+    var PT_DESC = descEl ? descEl.getAttribute('content') : '';
+
+    function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-br' : lang);
+        var dict = I18N[lang];
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            var k = el.getAttribute('data-i18n');
+            if (!('i18nPt' in el.dataset)) el.dataset.i18nPt = el.innerHTML;
+            el.innerHTML = (lang === 'pt' || !dict || dict[k] == null) ? el.dataset.i18nPt : dict[k];
+        });
+        document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+            var k = el.getAttribute('data-i18n-ph');
+            if (!('i18nPhPt' in el.dataset)) el.dataset.i18nPhPt = el.getAttribute('placeholder') || '';
+            el.setAttribute('placeholder', (lang === 'pt' || !dict || dict[k] == null) ? el.dataset.i18nPhPt : dict[k]);
+        });
+        if (lang === 'pt') { document.title = PT_TITLE; if (descEl) descEl.setAttribute('content', PT_DESC); }
+        else if (dict) { if (dict._title) document.title = dict._title; if (descEl && dict._desc) descEl.setAttribute('content', dict._desc); }
+        document.querySelectorAll('.lang-switch button').forEach(function (b) {
+            b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+        });
+        try { localStorage.setItem('tp_lang', lang); } catch (e) {}
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem('tp_lang'); } catch (e) {}
+    applyLang(saved && I18N[saved] || saved === 'pt' ? saved : 'pt');
+
+    document.querySelectorAll('.lang-switch button').forEach(function (b) {
+        b.addEventListener('click', function () { applyLang(b.dataset.lang); });
+    });
+})();
+
+/* Carrossel de destinos: setas + passagem automática. */
 (function () {
     var c = document.querySelector('[data-carousel]');
     if (!c) return;
     var track = c.querySelector('.carousel-track');
     var prev = c.querySelector('.prev');
     var next = c.querySelector('.next');
-
-    function step() {
-        var card = track.querySelector('.dest');
-        return card ? card.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
-    }
-    function atEnd() {
-        return track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
-    }
-    function advance() {
-        if (atEnd()) track.scrollTo({ left: 0, behavior: 'smooth' });
-        else track.scrollBy({ left: step(), behavior: 'smooth' });
-    }
-    function back() {
-        if (track.scrollLeft <= 5) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-        else track.scrollBy({ left: -step(), behavior: 'smooth' });
-    }
+    function step() { var card = track.querySelector('.dest'); return card ? card.getBoundingClientRect().width + 20 : track.clientWidth * 0.8; }
+    function atEnd() { return track.scrollLeft + track.clientWidth >= track.scrollWidth - 5; }
+    function advance() { if (atEnd()) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: step(), behavior: 'smooth' }); }
+    function back() { if (track.scrollLeft <= 5) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); else track.scrollBy({ left: -step(), behavior: 'smooth' }); }
     if (next) next.addEventListener('click', advance);
     if (prev) prev.addEventListener('click', back);
-
-    // Passagem automática — só se o usuário não pediu menos movimento.
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var timer = null;
     function play() { if (reduce || timer) return; timer = setInterval(advance, 3800); }
     function pause() { if (timer) { clearInterval(timer); timer = null; } }
-    c.addEventListener('mouseenter', pause);
-    c.addEventListener('mouseleave', play);
-    c.addEventListener('focusin', pause);
-    c.addEventListener('touchstart', pause, { passive: true });
+    c.addEventListener('mouseenter', pause); c.addEventListener('mouseleave', play);
+    c.addEventListener('focusin', pause); c.addEventListener('touchstart', pause, { passive: true });
     play();
 })();
 
-// Revelar-ao-rolar. Só liga se houver IntersectionObserver e o usuário não
-// pediu menos movimento — então, sem JS/observer, nada fica escondido.
+/* Seção 3: "simula" o fluxo destacando um passo por vez (Roteiro→Cronograma→Orçamento). */
+(function () {
+    var flow = document.querySelector('[data-flow]');
+    if (!flow) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var steps = [].slice.call(flow.querySelectorAll('.step'));
+    if (!steps.length) return;
+    var i = 0, timer = null;
+    function show(n) { steps.forEach(function (s, idx) { s.classList.toggle('active', idx === n); }); }
+    function tick() { i = (i + 1) % steps.length; show(i); }
+    function play() { if (timer) return; show(i); timer = setInterval(tick, 2600); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    // Só anima quando a seção está visível; pausa no hover.
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) {
+            es.forEach(function (e) { e.isIntersecting ? play() : stop(); });
+        }, { threshold: 0.4 }).observe(flow);
+    } else { play(); }
+    flow.addEventListener('mouseenter', stop);
+    flow.addEventListener('mouseleave', play);
+})();
+
+/* Revelar-ao-rolar. Sem JS/observer nada fica escondido. */
 (function () {
     if (!('IntersectionObserver' in window)) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     document.body.classList.add('js-reveal');
-    var sel = '.section-head, .cards, .featgrid, .feature-row, .compare, .plans, .carousel, .stats .wrap, .about, .newsletter .box';
+    var sel = '.section-head, .cards, .featgrid, .feature-row, .compare, .plans, .carousel, .stats .wrap, .about, .newsletter .box, .marquee';
     var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        });
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    document.querySelectorAll(sel).forEach(function (el) {
-        el.classList.add('reveal');
-        io.observe(el);
-    });
+    document.querySelectorAll(sel).forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
 })();
 </script>
 
