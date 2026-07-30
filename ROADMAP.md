@@ -44,7 +44,38 @@ O que falta no site (`usetravelplus.com`). As pendências do **app** ficam no
 
 ---
 
-## Melhorias
+## Monetização e crescimento *(definido em 30/07/2026)*
+
+O modelo de cobrança do app está no [ROADMAP do app](../travel/ROADMAP.md). O que
+cabe ao site:
+
+- **O site não cobra nada.** Todo o pagamento acontece dentro do app, via Google
+  Play Billing. Vender no site e destravar no app é *out-of-app purchase* e
+  motivo de remoção da loja — e obrigaria a construir conta, autenticação,
+  backend e sincronização de direito, que o app hoje não tem. O CTA leva à ficha
+  da Play Store, nunca a um checkout.
+
+- 🚫 **Nada de AdSense.** A página tem uma função só: gerar instalação. Cada
+  anúncio é uma porta de saída, e com o tráfego inicial o site trocaria
+  instalações por alguns reais por mês. Mesma decisão tomada para o app.
+
+- **Seção de preços na landing.** Faz sentido existir (qualifica o tráfego e
+  ajuda na busca), desde que o botão aponte para a Play Store. Espelhar os
+  valores do app: grátis com 1 viagem · R$ 24,90 por 5 · R$ 44,90 ilimitado.
+  ⚠️ Não escrever "todos os recursos" nem sugerir que a nuvem futura está
+  incluída — a v3 é assinatura separada.
+
+- **Conteúdo de busca — o principal movimento de crescimento.** Páginas do tipo
+  "roteiro de 4 dias em Campos do Jordão" ou "o que fazer em Gramado no inverno"
+  capturam gente exatamente no momento de planejar, que é quem instala e quem
+  compra. Cada página termina no mesmo lugar: baixar o roteiro pronto no app.
+  Bônus: esse mesmo material alimenta depois a IA de roteiro (v2.5) e o catálogo
+  de roteiros (v3) — escreve uma vez, usa três. Só faz sentido investir em
+  tráfego pago depois que essas páginas tiverem número de conversão.
+
+- **Página de suporte.** O Play Console exige contato de suporte público, e o
+  link de gerenciamento de compra do usuário costuma cair no site. Definir onde
+  mora antes da submissão.
 
 - **Subsetar a fonte de marca.** `caveat_brush.ttf` são 288 KB dos 593 KB que a
   home carrega — quase metade do peso, para o wordmark e dois títulos. Subsetar
@@ -62,8 +93,10 @@ O que falta no site (`usetravelplus.com`). As pendências do **app** ficam no
   escuros). O app tem tema escuro pendente na v1; se ele sair, vale espelhar
   com `prefers-color-scheme`.
 
-- **Escopo do [SECURITY.md](SECURITY.md).** Cobre só o site. Se o app passar a
-  ter backend (v3), a política precisa ser reescrita para incluir os dois.
+- **Escopo do [SECURITY.md](SECURITY.md).** Cobre só o site. O app ganha o
+  primeiro endpoint próprio já na **v2.5** (proxy da IA de roteiro), e backend
+  completo na v3 — a política precisa ser reescrita para incluir os dois antes
+  disso.
 
 ---
 
