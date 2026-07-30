@@ -467,7 +467,13 @@ h2 {
     background: var(--ocean-deep);
     color: #fff;
 }
+.doc-header { color: #fff; }
 .doc-header .site-nav a, .doc-header .brand { color: #fff; }
+
+/* Lista dentro do documento legal. */
+.doc ul { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 10px; }
+.doc li { color: var(--ink); }
+.doc .meta p:last-child { margin-top: 10px; }
 
 /* ---------- Responsivo ---------- */
 
