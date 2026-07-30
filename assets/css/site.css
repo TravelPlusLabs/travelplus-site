@@ -923,3 +923,129 @@ h2 {
     .carousel-track > .dest { flex-basis: 82%; }  /* 1 card + espiada no celular */
     .carousel-btn { display: none; }              /* no touch, arrasta */
 }
+
+/* ===========================================================================
+ * Modernização: revelar-ao-rolar, faixa de números, grade de recursos com
+ * ícones, lista de espera, sobre e rodapé em colunas.
+ * ======================================================================== */
+
+/* Revelar ao rolar. Só ativa quando o JS marca <body class="js-reveal">, então
+   sem JavaScript nada fica escondido. */
+.js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js-reveal .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+    .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Faixa de números (tração) — escura, com doodles reaproveitados. */
+.stats { background: var(--ocean-deep); color: #fff; }
+.stats .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+    text-align: center;
+}
+.stat .n {
+    font-family: var(--hand);
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--ocean-light);
+}
+.stat .l { display: block; margin-top: 8px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.82); }
+.stat .l .en { color: rgba(255, 255, 255, 0.5); }
+
+/* Grade de recursos com ícone. */
+.featgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feat {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 26px;
+}
+.feat .ic {
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    border-radius: 13px;
+    background: #eef7f4;
+    color: var(--ocean);
+    margin-bottom: 16px;
+}
+.feat .ic svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.feat h3 { font-size: 1.12rem; margin: 0 0 8px; }
+.feat p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+.feat .en { font-size: 0.82em; }
+
+/* Lista de espera / newsletter. */
+.newsletter { background: #f6f1e8; }
+.newsletter .box { max-width: 620px; margin: 0 auto; text-align: center; }
+.newsletter form { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; justify-content: center; }
+.newsletter input[type="email"] {
+    flex: 1 1 280px;
+    padding: 14px 18px;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+}
+.newsletter input[type="email"]:focus-visible { border-color: var(--ocean); outline-offset: 1px; }
+.newsletter .note { margin-top: 16px; font-size: 0.85rem; color: var(--muted); }
+.newsletter input:disabled,
+.newsletter .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* Sobre. */
+.about { max-width: 720px; margin: 0 auto; text-align: center; }
+.about p { color: var(--muted); font-size: 1.06rem; }
+.about .lead-q { font-family: var(--hand); font-size: 1.9rem; color: var(--ocean); margin: 0 0 12px; }
+
+/* Rodapé em colunas. */
+.footer-rich {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-rich h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 14px;
+}
+.footer-rich ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.footer-rich a { color: rgba(255, 255, 255, 0.82); text-decoration: none; font-size: 0.95rem; }
+.footer-rich a:hover { color: #fff; text-decoration: underline; }
+.footer-social { display: flex; gap: 12px; margin-top: 16px; }
+.footer-social a {
+    width: 38px; height: 38px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+.footer-social a:hover { background: var(--coral); }
+.footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+.footer-bottom {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .featgrid { grid-template-columns: repeat(2, 1fr); }
+    .footer-rich { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+
+@media (max-width: 560px) {
+    .featgrid { grid-template-columns: 1fr; }
+    .footer-rich { grid-template-columns: 1fr; }
+    .newsletter input[type="email"] { flex-basis: 100%; }
+    .newsletter form .btn { width: 100%; }
+}
