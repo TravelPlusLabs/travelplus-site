@@ -1049,3 +1049,105 @@ h2 {
     .newsletter input[type="email"] { flex-basis: 100%; }
     .newsletter form .btn { width: 100%; }
 }
+
+/* ===========================================================================
+ * Seletor de idioma, ícones da faixa de valores, efeito da seção 3 (fluxo) e
+ * marquee de prints.
+ * ======================================================================== */
+
+/* Seletor de idioma no cabeçalho. */
+.lang-switch {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+}
+.lang-switch button {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    cursor: pointer;
+    opacity: 0.68;
+    transition: background 0.15s ease, opacity 0.15s ease;
+}
+.lang-switch button:hover { opacity: 1; }
+.lang-switch button[aria-pressed="true"] { background: var(--coral); color: #fff; opacity: 1; }
+
+/* Ícone em cada valor da faixa. */
+.value-strip .v .ic {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 10px;
+    border-radius: 12px;
+    background: #eef7f4;
+    color: var(--ocean);
+}
+.value-strip .v .ic svg {
+    width: 22px; height: 22px;
+    fill: none; stroke: currentColor; stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Seção 3 — destaque de um passo por vez (efeito de "simulação" do fluxo). */
+.card.step {
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.card.step.active {
+    transform: translateY(-8px);
+    border-color: var(--coral);
+    box-shadow: 0 20px 44px rgba(253, 105, 85, 0.18);
+}
+.card.step .num { transition: transform 0.45s ease; transform-origin: left center; }
+.card.step.active .num { transform: scale(1.18); }
+
+/* Marquee de prints — rola sozinho, pausa no hover, some no reduced-motion. */
+.marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: 8px 0 24px;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    animation: marquee 44s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
+.mshot {
+    flex: 0 0 auto;
+    width: 190px;
+    aspect-ratio: 1080 / 2340;
+    border-radius: 26px;
+    padding: 7px;
+    background: linear-gradient(150deg, #2c4650, #0d2129);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+.mshot img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .marquee { overflow-x: auto; }
+}
+
+@media (max-width: 560px) {
+    .lang-switch { padding: 2px; }
+    .lang-switch button { padding: 4px 9px; font-size: 12px; }
+    .mshot { width: 150px; }
+}

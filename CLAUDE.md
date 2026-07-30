@@ -34,7 +34,7 @@ The hook catches common key formats and credential filenames (including `git add
 ## Conventions
 
 - **No third-party hosts.** No CDN scripts, no Google Fonts links, no analytics, no embeds. Everything the page needs is served from this origin — that's why the brand font is committed here instead of linked. Local `assets/` files are fine; an external `<link>` or `<script>` is not.
-- **Content is bilingual**: Portuguese is the primary text, English follows in a `.en` span with `lang="en"`. Preserve this in new sections.
+- **Languages**: `index.html` has a **PT/EN/ES language switcher** — Portuguese is the default text written in the HTML, and English/Spanish come from the `I18N` dictionary in the inline `<script>`. Translatable elements carry `data-i18n="key"` (or `data-i18n-ph` for a placeholder); add both the attribute and the `en`/`es` entries when adding copy. A missing key falls back to the PT text. The EN/ES strings were drafted by the assistant and still need the owner's tone review. `privacy.html` is the exception — it stays inline-bilingual (PT + `.en` span), not switched.
 - The pages carry real legal/corporate identifiers (company legal name, CNPJ, contact address). Do not invent, alter, or "correct" these values — ask before touching them.
 - `privacy.html` is a legal document. Restyle its markup freely; do not reword its text without the owner asking.
 
