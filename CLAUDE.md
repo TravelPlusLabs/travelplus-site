@@ -31,6 +31,46 @@ git config core.hooksPath .githooks
 
 The hook catches common key formats and credential filenames (including `git add -f`), but it is a speed bump, not a guarantee: unusual formats slip through and `--no-verify` bypasses it. A secret that reaches GitHub is not fixed by a follow-up commit — rotate it.
 
+## Working Agreement — Parallel Sessions
+
+The owner runs several Claude Code sessions at once (product decisions, the app
+repo, this repo). **They share no context — these files are the only shared
+state.** Any decision reached in conversation must be written down in the same
+turn: the short enforceable rule here, the reasoning in [ROADMAP.md](ROADMAP.md),
+dated. Then tell the owner which sessions need to re-read, since a running
+session will not pick up the edit on its own. Full protocol in the workspace
+`CLAUDE.md` at `C:\dev\app\CLAUDE.md`.
+
+Product decisions come *from* that session into these files — if work here starts
+inventing a price, a plan name, or a policy, stop and reconcile first.
+
+## Monetization (decided 2026-07-30 — see [ROADMAP.md](ROADMAP.md))
+
+- **The site never takes payment.** All billing happens inside the app via Google
+  Play Billing. Selling here and unlocking in the app is an out-of-app purchase —
+  grounds for removal from the Play Store. Every CTA points at the Play Store
+  listing, never at a checkout.
+- **No AdSense, no ad slots of any kind.** The page has one job: drive installs.
+  Same decision was made for the app.
+- A **pricing section is allowed and useful** — mirror the app's real SKUs:
+  **free = 1 trip · R$ 24,90 = 5 trips · R$ 44,90 = unlimited on device**, all
+  **one-time purchases (no monthly / no subscription)**. What is sold is *how many
+  trips you can keep*, not features — everyone has the full app. The purchase
+  happens inside the app; the button here points at the Play Store, never a
+  checkout. ⚠️ Never frame it as a subscription, never write "all features", never
+  imply the future cloud tier is included (v3 cloud is a separate R$ 14,90/mo
+  subscription).
+- **SEO destination pages** ("roteiro de 4 dias em Campos do Jordão") are the main
+  growth play — they capture planning intent and funnel to the install. The same
+  copy later feeds the v2.5 roteiro AI and the v3 catalogue: write once, use thrice.
+- **A public support page is required before Play submission** — the Play Console
+  needs a support contact, and the purchase-management link tends to land on the
+  site. Decide where it lives before submitting.
+- 🚨 **The "offline / nothing leaves the device" story has an expiry.** v2.5 adds
+  the app's first own endpoint (roteiro-AI proxy) and v3 a full backend, so
+  `privacy.html` and `SECURITY.md` — written for today's no-network app — must be
+  revisited before v2.5 ships.
+
 ## Conventions
 
 - **No third-party hosts.** No CDN scripts, no Google Fonts links, no analytics, no embeds. Everything the page needs is served from this origin — that's why the brand font is committed here instead of linked. Local `assets/` files are fine; an external `<link>` or `<script>` is not.
@@ -46,4 +86,4 @@ Write alt text by **looking at the image**, not by trusting the filename — `be
 
 ## Known gaps
 
-Tracked in [ROADMAP.md](ROADMAP.md) — read it before starting work, and add findings there rather than here so there's one list. The one worth knowing up front: **`privacy.html` claims the app requests location and gallery permissions, which it does not**, and that text has to be corrected before the privacy URL goes into Play Console.
+Tracked in [ROADMAP.md](ROADMAP.md) — read it before starting work, and add findings there rather than here so there's one list. Recently closed: `privacy.html` no longer claims phantom location/gallery permissions (corrected and live), and the landing pricing was realigned to the decided one-time model. The site itself is **live** at `usetravelplus.com` (landing + privacy), on a branch-protected `main` (every change goes through a PR).
