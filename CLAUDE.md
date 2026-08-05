@@ -61,7 +61,13 @@ inventing a price, a plan name, or a policy, stop and reconcile first.
   imply the future cloud tier is included (v3 cloud is a separate R$ 14,90/mo
   subscription).
 - **SEO destination pages** ("roteiro de 4 dias em Campos do Jordão") are the main
-  growth play — they capture planning intent and funnel to the install. The same
+  growth play — they capture planning intent and funnel to the install.
+- **This repo will also host the app's trip packages** *(decided 2026-07-30)* —
+  static JSON plus cover images, fetched by the app so a user can install a
+  ready-made itinerary in one tap. They are **free marketing assets, never sold**;
+  the revenue comes from the trip slot inside the app. Adding them here means
+  paths under this repo become a de facto API for the app: **do not rename or
+  move those files once shipped clients depend on them.** The same
   copy later feeds the v2.5 roteiro AI and the v3 catalogue: write once, use thrice.
 - **A public support page is required before Play submission** — the Play Console
   needs a support contact, and the purchase-management link tends to land on the
