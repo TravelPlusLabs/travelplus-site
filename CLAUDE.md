@@ -53,13 +53,18 @@ inventing a price, a plan name, or a policy, stop and reconcile first.
 - **No AdSense, no ad slots of any kind.** The page has one job: drive installs.
   Same decision was made for the app.
 - A **pricing section is allowed and useful** — mirror the app's real SKUs:
-  **free = 1 trip · R$ 24,90 = 5 trips · R$ 44,90 = unlimited on device**, all
+  **free = 1 trip · R$ 29,90 = 3 trips · R$ 49,90 = unlimited on device**, all
   **one-time purchases (no monthly / no subscription)**. What is sold is *how many
   trips you can keep*, not features — everyone has the full app. The purchase
   happens inside the app; the button here points at the Play Store, never a
   checkout. ⚠️ Never frame it as a subscription, never write "all features", never
   imply the future cloud tier is included (v3 cloud is a separate R$ 14,90/mo
   subscription).
+
+  Prices were revised on 2026-07-30 (previously R$ 24,90 / 5 trips and R$ 44,90 /
+  unlimited); the `index.html` cards **and** the `I18N` dictionary now carry the
+  new numbers in PT/EN/ES. The R$ 24,90 in-app upgrade SKU must **not** appear on
+  the site.
 - **SEO destination pages** ("roteiro de 4 dias em Campos do Jordão") are the main
   growth play — they capture planning intent and funnel to the install.
 - **This repo will also host the app's trip packages** *(decided 2026-07-30)* —
