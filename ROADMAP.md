@@ -62,11 +62,12 @@ cabe ao site:
   anúncio é uma porta de saída, e com o tráfego inicial o site trocaria
   instalações por alguns reais por mês. Mesma decisão tomada para o app.
 
-- **Seção de preços na landing.** Faz sentido existir (qualifica o tráfego e
-  ajuda na busca), desde que o botão aponte para a Play Store. Espelhar os
-  valores do app: grátis com 1 viagem · R$ 24,90 por 5 · R$ 44,90 ilimitado.
-  ⚠️ Não escrever "todos os recursos" nem sugerir que a nuvem futura está
-  incluída — a v3 é assinatura separada.
+- **Seção de preços na landing — ✅ alinhada (30/07/2026).** Os valores corretos
+  (**grátis 1 viagem · R$ 29,90 por 3 · R$ 49,90 ilimitado**, pagamento único)
+  estão nos cards **e** no dicionário `I18N` (PT/EN/ES). O SKU de upgrade de
+  R$ 24,90 é interno do app e **não entra no site**. ⚠️ Nunca escrever "todos os
+  recursos" nem sugerir que a nuvem futura (v3, assinatura) está incluída. Botão
+  sempre para a Play Store.
 
 - **Conteúdo de busca — o principal movimento de crescimento.** Páginas do tipo
   "roteiro de 4 dias em Campos do Jordão" ou "o que fazer em Gramado no inverno"
@@ -92,9 +93,14 @@ cabe ao site:
   do app continua nos aparelhos. Definir a estrutura de pastas e um manifesto
   versionado **antes** do primeiro app em produção consumir.
 
-- **Instagram** — canal principal para os pacotes: roteiro pronto é formato
-  nativo de carrossel e Reels, e cada post termina no mesmo lugar que as páginas
-  de destino, que é a instalação. Ainda sem perfil criado.
+- **Instagram** — canal principal para atrair pessoas que já estão planejando
+  viagens. A operação editorial pré-lançamento foi definida em **06/08/2026**:
+  perfil `@travelplus.app`, quatro posts de feed por semana e Stories diários,
+  preparados e publicados manualmente. O CTA enquanto o app não está na loja é
+  seguir o perfil; o único caminho de contato é `contact@usetravelplus.com`.
+  O pacote semanal, o modelo de aprovação e a planilha de aprendizado ficam em
+  `C:\dev\app\instagram\`. Só trocar o CTA por instalação e citar pacotes para
+  importar depois que ambos estiverem realmente publicados.
 
 - **Subsetar a fonte de marca.** `caveat_brush.ttf` são 288 KB dos 593 KB que a
   home carrega — quase metade do peso, para o wordmark e dois títulos. Subsetar
