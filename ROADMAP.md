@@ -16,11 +16,12 @@ Os itens do **site** que travavam a submissão estão resolvidos e no ar
   (GitHub Pages a cada merge em `main`). A URL para o Play Console é
   `https://usetravelplus.com/privacy.html`.
 - **Permissões corrigidas na política.** O texto **não cita mais localização
-  nem galeria**: descreve o photo picker do sistema (sem permissão de galeria),
-  o mapa por intent (sem localização) e a ausência de permissão de internet —
-  batendo com o Data Safety. ⚠️ Se a previsão do tempo da v2 / a IA de roteiro
-  da v2.5 entrarem, o texto muda (aí há rede) — há um comentário no topo do
-  `privacy.html` avisando.
+  nem galeria** (photo picker do sistema, mapas por intent). Desde 06/08/2026
+  descreve também que o app usa **INTERNET só para o Google Play Billing**
+  (compras processadas pela Google; nenhum dado de viagem sai) — batendo com o
+  Data Safety. ⚠️ Se entrar rede para outra finalidade (previsão do tempo da v2 /
+  IA de roteiro da v2.5), atualizar o texto de novo — há um aviso no topo do
+  `privacy.html`.
 - **Data de "última atualização"** presente na política.
 
 > O ROADMAP do **app** ainda pode listar "corrigir a política" como pendente —
