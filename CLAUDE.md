@@ -77,10 +77,13 @@ inventing a price, a plan name, or a policy, stop and reconcile first.
 - **A public support page is required before Play submission** — the Play Console
   needs a support contact, and the purchase-management link tends to land on the
   site. Decide where it lives before submitting.
-- 🚨 **The "offline / nothing leaves the device" story has an expiry.** v2.5 adds
-  the app's first own endpoint (roteiro-AI proxy) and v3 a full backend, so
-  `privacy.html` and `SECURITY.md` — written for today's no-network app — must be
-  revisited before v2.5 ships.
+- 🚨 **The "offline / nothing leaves the device" story already has one exception.**
+  Since 2026-08-06, v1 ships Google Play Billing, so the app declares `INTERNET`
+  (+ `ACCESS_NETWORK_STATE`, `com.android.vending.BILLING`) and talks to Google
+  Play — the **only** network use; no trip data leaves the device. `privacy.html`
+  describes this. Next revisit: v2.5 (roteiro-AI proxy) and v3 (full backend) add
+  more network, so `privacy.html` and `SECURITY.md` must be updated again before
+  v2.5 ships.
 
 ## Conventions
 

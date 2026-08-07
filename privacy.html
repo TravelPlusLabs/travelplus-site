@@ -37,9 +37,10 @@
 <!-- ⚠️ DOCUMENTO LEGAL. O português é a versão de referência; EN/ES são
      traduções de conveniência escritas pela IA e pedem revisão. As descrições
      de permissões refletem o comportamento real do app (seletor de fotos do
-     sistema, mapas por intent, sem internet). Se o app passar a ter anúncios,
-     analytics ou recursos online (ex.: previsão do tempo da v2), ESTE TEXTO
-     PRECISA SER ATUALIZADO. Não alterar razão social nem CNPJ. -->
+     sistema, mapas por intent; INTERNET apenas para o Google Play Billing, desde
+     06/08/2026). Se entrar rede para outra finalidade (ex.: previsão do tempo/IA
+     de roteiro da v2/v2.5), anúncios ou analytics, ESTE TEXTO PRECISA SER
+     ATUALIZADO. Não alterar razão social nem CNPJ. -->
 <main class="doc" id="conteudo">
     <h1 data-i18n="p.title">Política de Privacidade</h1>
 
@@ -47,10 +48,10 @@
         <p><strong>TravelPlus Labs</strong></p>
         <p>MAURICIO APARECIDO DE CARVALHO DESENVOLVIMENTO DE SOFTWARE LTDA</p>
         <p><strong>CNPJ:</strong> 62.171.100/0001-38</p>
-        <p data-i18n="p.updated">Última atualização: 30 de julho de 2026</p>
+        <p data-i18n="p.updated">Última atualização: 6 de agosto de 2026</p>
     </div>
 
-    <p data-i18n="p.intro">Esta política explica como o aplicativo <strong>Travel+</strong> trata seus dados. Em resumo: o Travel+ é offline e tudo o que você registra fica apenas no seu aparelho — não temos servidores que coletem, guardem ou compartilhem suas informações.</p>
+    <p data-i18n="p.intro">Esta política explica como o aplicativo <strong>Travel+</strong> trata seus dados. Em resumo: seus dados de viagem ficam apenas no seu aparelho e não temos servidores que coletem ou guardem suas informações. A única conexão de rede do app é para processar as compras dentro do app, pela Google Play — nada da sua viagem é enviado.</p>
 
     <h2 data-i18n="p.s1h">1. Quais dados tratamos</h2>
     <p data-i18n="p.s1p">O Travel+ funciona sem cadastro, sem login e sem conta. Tudo o que você cria — viagens, locais, fotos, endereços, horários e valores — é gravado localmente, no armazenamento do próprio aparelho. Esses dados não são enviados para nenhum servidor, nosso ou de terceiros.</p>
@@ -60,11 +61,11 @@
     <ul>
         <li data-i18n="p.s2photos"><strong>Fotos:</strong> para escolher uma imagem, o app usa o seletor de fotos do sistema Android. Você seleciona uma foto específica e o app guarda uma cópia dela no seu próprio armazenamento interno — o app não enxerga o restante da sua galeria.</li>
         <li data-i18n="p.s2maps"><strong>Como chegar:</strong> ao tocar em “Como chegar”, o app abre o aplicativo de mapas do seu aparelho já com o endereço do item. O Travel+ não acessa a sua localização.</li>
-        <li data-i18n="p.s2net"><strong>Internet:</strong> o app não pede permissão de acesso à internet e não faz requisições de rede.</li>
+        <li data-i18n="p.s2net"><strong>Internet:</strong> o app usa a rede apenas para processar as compras dentro do app, pela Google Play (a biblioteca de pagamentos da Google exige a permissão de internet). É a única conexão do app — nenhum dado da sua viagem é enviado.</li>
     </ul>
 
     <h2 data-i18n="p.s3h">3. Compartilhamento e terceiros</h2>
-    <p data-i18n="p.s3p">Não compartilhamos nem vendemos seus dados — porque não os coletamos. O Travel+ não utiliza serviços de análise (analytics), anúncios ou rastreadores de terceiros.</p>
+    <p data-i18n="p.s3p">Não vendemos seus dados e não usamos serviços de análise (analytics), anúncios ou rastreadores. As compras dentro do app são processadas pela <strong>Google Play</strong> (Google LLC): é a Google que cuida do pagamento — não recebemos nem guardamos os dados do seu cartão. O histórico de compra fica ligado à sua conta Google, conforme a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidade do Google</a>.</p>
 
     <h2 data-i18n="p.s4h">4. Retenção e exclusão</h2>
     <p data-i18n="p.s4p">Como seus dados ficam só no aparelho, o controle é todo seu: apagar uma viagem, limpar os dados do app nas configurações do Android ou desinstalá-lo remove as informações. Não guardamos nada em servidores, então não há dados sob nossa posse para excluir a seu pedido.</p>
@@ -132,17 +133,17 @@ var I18N = {
     'skip':'Skip to content',
     'nav.home':'Home','nav.features':'Features','nav.plans':'Plans','nav.about':'About','nav.faq':'FAQ','nav.contact':'Contact',
     'p.title':'Privacy Policy',
-    'p.updated':'Last updated: July 30, 2026',
-    'p.intro':'This policy explains how the <strong>Travel+</strong> app handles your data. In short: Travel+ is offline and everything you record stays only on your device — we have no servers that collect, store or share your information.',
+    'p.updated':'Last updated: August 6, 2026',
+    'p.intro':'This policy explains how the <strong>Travel+</strong> app handles your data. In short: your trip data stays only on your device and we have no servers that collect or store your information. The app\'s only network connection is to process in-app purchases through Google Play — none of your trip data is sent.',
     'p.s1h':'1. What data we handle',
     'p.s1p':'Travel+ works with no sign-up, no login and no account. Everything you create — trips, places, photos, addresses, times and amounts — is saved locally, in the device’s own storage. This data is not sent to any server, ours or third-party.',
     'p.s2h':'2. Permissions',
     'p.s2p':'Travel+ <strong>does not request location or photo-gallery permissions</strong>. The app relies on the system’s own features, which don’t require those permissions:',
     'p.s2photos':'<strong>Photos:</strong> to pick an image, the app uses the Android system photo picker. You select a specific photo and the app keeps a copy of it in its own internal storage — the app cannot see the rest of your gallery.',
     'p.s2maps':'<strong>Directions:</strong> when you tap “Directions”, the app opens your device’s maps app with the item’s address already filled in. Travel+ does not access your location.',
-    'p.s2net':'<strong>Internet:</strong> the app does not request internet permission and makes no network requests.',
+    'p.s2net':'<strong>Internet:</strong> the app uses the network only to process in-app purchases through Google Play (Google\'s billing library requires internet permission). It\'s the app\'s only connection — none of your trip data is sent.',
     'p.s3h':'3. Sharing and third parties',
-    'p.s3p':'We don’t share or sell your data — because we don’t collect it. Travel+ uses no analytics, advertising or third-party trackers.',
+    'p.s3p':'We don’t sell your data and use no analytics, advertising or trackers. In-app purchases are processed by <strong>Google Play</strong> (Google LLC): Google handles the payment — we don’t receive or store your card details. Your purchase history is tied to your Google account, per <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy</a>.',
     'p.s4h':'4. Retention and deletion',
     'p.s4p':'Since your data lives only on the device, you’re fully in control: deleting a trip, clearing the app’s data in Android settings, or uninstalling it removes the information. We keep nothing on servers, so there is no data in our possession to delete on request.',
     'p.s5h':'5. Children',
@@ -161,17 +162,17 @@ var I18N = {
     'skip':'Saltar al contenido',
     'nav.home':'Inicio','nav.features':'Recursos','nav.plans':'Planes','nav.about':'Acerca','nav.faq':'Dudas','nav.contact':'Contacto',
     'p.title':'Política de Privacidad',
-    'p.updated':'Última actualización: 30 de julio de 2026',
-    'p.intro':'Esta política explica cómo la app <strong>Travel+</strong> trata tus datos. En resumen: Travel+ es sin conexión y todo lo que registras queda solo en tu dispositivo — no tenemos servidores que recojan, guarden o compartan tu información.',
+    'p.updated':'Última actualización: 6 de agosto de 2026',
+    'p.intro':'Esta política explica cómo la app <strong>Travel+</strong> trata tus datos. En resumen: tus datos de viaje quedan solo en tu dispositivo y no tenemos servidores que recojan o guarden tu información. La única conexión de red de la app es para procesar las compras dentro de la app, a través de Google Play — nada de tu viaje se envía.',
     'p.s1h':'1. Qué datos tratamos',
     'p.s1p':'Travel+ funciona sin registro, sin inicio de sesión y sin cuenta. Todo lo que creas — viajes, lugares, fotos, direcciones, horarios e importes — se guarda localmente, en el almacenamiento del propio dispositivo. Estos datos no se envían a ningún servidor, nuestro ni de terceros.',
     'p.s2h':'2. Permisos',
     'p.s2p':'Travel+ <strong>no solicita permisos de ubicación ni de acceso a la galería de fotos</strong>. La app se apoya en funciones del propio sistema, que no exigen esos permisos:',
     'p.s2photos':'<strong>Fotos:</strong> para elegir una imagen, la app usa el selector de fotos del sistema Android. Seleccionas una foto específica y la app guarda una copia en su propio almacenamiento interno — la app no ve el resto de tu galería.',
     'p.s2maps':'<strong>Cómo llegar:</strong> al tocar “Cómo llegar”, la app abre la aplicación de mapas de tu dispositivo con la dirección del ítem ya cargada. Travel+ no accede a tu ubicación.',
-    'p.s2net':'<strong>Internet:</strong> la app no pide permiso de acceso a internet y no hace solicitudes de red.',
+    'p.s2net':'<strong>Internet:</strong> la app usa la red solo para procesar las compras dentro de la app, a través de Google Play (la biblioteca de pagos de Google exige el permiso de internet). Es la única conexión de la app — nada de tu viaje se envía.',
     'p.s3h':'3. Compartición y terceros',
-    'p.s3p':'No compartimos ni vendemos tus datos — porque no los recogemos. Travel+ no utiliza servicios de analítica, anuncios ni rastreadores de terceros.',
+    'p.s3p':'No vendemos tus datos y no usamos analítica, anuncios ni rastreadores. Las compras dentro de la app las procesa <strong>Google Play</strong> (Google LLC): Google gestiona el pago — no recibimos ni guardamos los datos de tu tarjeta. Tu historial de compra queda vinculado a tu cuenta de Google, según la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad de Google</a>.',
     'p.s4h':'4. Retención y eliminación',
     'p.s4p':'Como tus datos quedan solo en el dispositivo, el control es todo tuyo: borrar un viaje, limpiar los datos de la app en los ajustes de Android o desinstalarla elimina la información. No guardamos nada en servidores, así que no hay datos en nuestro poder para eliminar a tu pedido.',
     'p.s5h':'5. Niños',
